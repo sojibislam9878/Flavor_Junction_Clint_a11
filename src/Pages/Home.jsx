@@ -1,3 +1,4 @@
+import Slider from "../Components/Slider";
 import useAuth from "../Hooks/useAuth";
 
 
@@ -5,7 +6,7 @@ const Home = () => {
     const {user}= useAuth()
     return (
         <div>
-            <h1>{user?.displayName}</h1>
+           <Slider></Slider>
         </div>
     );
 };

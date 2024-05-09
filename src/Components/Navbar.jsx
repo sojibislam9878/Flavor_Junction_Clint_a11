@@ -124,14 +124,14 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex ">
           {user ? (
-            <div className=" flex gap-2 pr-2 md:pr-0">
+            <div className=" flex justify-center gap-2 pr-2 md:pr-0">
               <div className="dropdown dropdown-end mt-1">
                 <div
                   tabIndex={0}
                   role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
-                  <div className="w-20 rounded-full">
+                  <div className="w-30 rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
                       src={user.photoURL || "https://i.ibb.co/4SrK9pD/profile.jpg"}
@@ -143,22 +143,21 @@ const Navbar = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
+                    <Link className="justify-between">
+                      My added food Items
+                    </Link>
                   </li>
                   <li>
-                    <a>Settings</a>
+                   <Link>Add a food item</Link>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <Link>My ordered Food Items</Link>
                   </li>
                 </ul>
               </div>
               <button
                 onClick={logout}
-                className="btn bg-[#EA6A12] text-white font-bold hover:bg-[#EA6A12] hidden md:flex"
+                className="btn mt-1 bg-[#EA6A12] text-white font-bold hover:bg-[#EA6A12] hidden md:flex"
               >
                 Logout
               </button>
