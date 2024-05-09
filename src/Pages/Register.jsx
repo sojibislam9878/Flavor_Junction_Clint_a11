@@ -48,18 +48,6 @@ const Register = () => {
             <span className="text-red-600">Enter Your Full Name</span>
           )}
           <div className="flex justify-center items-center gap-2 border-b-2">
-            <span className="material-symbols-outlined mt-6">image</span>
-            <input
-            type="url"
-              placeholder="Your Photo URL"
-              {...register("photo", { required: true })}
-              className="w-full py-4  outline-none mt-6 bg-[#FAF9F5]"
-            />
-          </div>
-          {errors.photo && (
-            <span className="text-red-600">Give Your Photo URL</span>
-          )}
-          <div className="flex justify-center items-center gap-2 border-b-2">
           <span className="material-symbols-outlined mt-6 text-2xl">
                 alternate_email
               </span>
@@ -71,6 +59,18 @@ const Register = () => {
           />
           </div>
           {errors.email && <span className="text-red-600">Enter Email</span>}
+          <div className="flex justify-center items-center gap-2 border-b-2">
+            <span className="material-symbols-outlined mt-6">image</span>
+            <input
+            type="url"
+              placeholder="Your Photo URL"
+              {...register("photo", { required: true })}
+              className="w-full py-4  outline-none mt-6 bg-[#FAF9F5]"
+            />
+          </div>
+          {errors.photo && (
+            <span className="text-red-600">Give Your Photo URL</span>
+          )}
           <div className="relative">
             <div  className="flex justify-center items-center gap-2 border-b-2">
             <span className="material-symbols-outlined mt-6 text-2xl">lock</span>
