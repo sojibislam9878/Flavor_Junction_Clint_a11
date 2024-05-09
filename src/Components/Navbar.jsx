@@ -4,7 +4,7 @@ const Navbar = () => {
   // const { user, logout } = useAuth();
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
   const activeLink = `bg-gradient-to-r from-[#EA6A12] to-[#EA6A12] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
-  const user = true;
+  const user = false;
   return (
     <div className="sticky top-0 z-40 bg-base-100 shadow-xl ">
       <div className="navbar bg-base-100 container mx-auto p-4 ">

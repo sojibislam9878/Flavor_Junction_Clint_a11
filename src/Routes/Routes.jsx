@@ -3,6 +3,7 @@ import Root from "../Pages/Root";
 import Home from "../Pages/Home";
 import AllFoods from "../Pages/AllFoods";
 import Gallery from "../Pages/Gallery";
+import Login from "../Pages/Login";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
         {
           path:"/gallery",
           element:<Gallery></Gallery>,
+        },
+        {
+          path:"/login",
+          element:<Login></Login>,
         },
       ]
     },
