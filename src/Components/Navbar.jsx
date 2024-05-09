@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
-  // const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
+  console.log(user);
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
   const activeLink = `bg-gradient-to-r from-[#EA6A12] to-[#EA6A12] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
-  const user = false;
   return (
     <div className="sticky top-0 z-40 bg-[#FCF9EE] shadow-xl ">
       <div className="navbar bg-[#FCF9EE] container mx-auto p-4 ">
@@ -63,7 +64,7 @@ const Navbar = () => {
               {user ? (
                 <li className="md:hidden">
                   <button
-                    // onClick={logout}
+                    onClick={logout}
                     className="btn mt-4 bg-[#EA6A12] text-white font-bold hover:bg-[#C75A0F]"
                   >
                     Logout
@@ -76,18 +77,13 @@ const Navbar = () => {
                       Login
                     </button>
                   </Link>
-                  <Link to="/registration">
-                    <button className="btn bg-[#EA6A12] text-white font-bold hover:bg-[#C75A0F]">
-                      Register
-                    </button>
-                  </Link>
                 </div>
               )}
             </ul>
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-3xl font-garamond text-[#EA6A12]"
+            className="btn btn-ghost md:text-3xl text-xl font-garamond text-[#EA6A12]"
           >
             Flavor Junction
           </Link>
@@ -128,17 +124,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex ">
           {user ? (
-            <div className="flex  items-center gap-2 pr-2 md:pr-0">
-              <div className="dropdown dropdown-end">
+            <div className=" flex gap-2 pr-2 md:pr-0">
+              <div className="dropdown dropdown-end mt-1">
                 <div
                   tabIndex={0}
                   role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
-                  <div className="w-10 rounded-full">
+                  <div className="w-20 rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
-                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      src={user.photoURL || "https://i.ibb.co/4SrK9pD/profile.jpg"}
                     />
                   </div>
                 </div>
@@ -161,7 +157,7 @@ const Navbar = () => {
                 </ul>
               </div>
               <button
-                // onClick={logout}
+                onClick={logout}
                 className="btn bg-[#EA6A12] text-white font-bold hover:bg-[#EA6A12] hidden md:flex"
               >
                 Logout

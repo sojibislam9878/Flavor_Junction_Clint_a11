@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
-    // const { user } = useAuth();
-    // console.log(user);
-    // navigate
-    // const navigate = useNavigate();
-    // const Locations = useLocation();
-    // const form = Locations?.state || "/";
+    const navigate = useNavigate();
+    const Locations = useLocation();
+    const form = Locations?.state || "/";
     const {
       register,
       handleSubmit,
@@ -19,11 +18,16 @@ const Register = () => {
     const handleHide = () => {
       setIsHide(!isHide);
     };
-    // const { createUserWithEmail, updateUser} = useAuth();
+    const { createUserWithEmail, updateUser} = useAuth();
   
     // create profile and update user
     const onSubmit = (data) => {
-        console.log(data);
+      const { email, password, name, photo } = data;
+      createUserWithEmail(email, password, toast).then(() => {
+        updateUser(name, photo);
+        navigate(form);
+        
+      });
     };
     return (
         <div className="flex justify-center p-4 pt-10 pb-16 bg-[#FAF9F5]">
@@ -110,7 +114,7 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      {/* <ToastContainer /> */}
+      <ToastContainer/>
     </div>
     );
 };

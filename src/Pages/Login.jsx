@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 //     const Locations = useLocation();
@@ -10,9 +13,24 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-//   const { login, googleSignUP, githubSignUP } = useAuth();
+  const { login } = useAuth();
   const onSubmit = (data) => {
-        console.log(data);
+    login(data.email, data.password)
+    .then((res) => {
+      console.log(res.user);
+    })
+    .catch(() => {
+      toast.error("Wrong email or password! check again", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    });
   };
 
   const [isHide, setIsHide] = useState(false);
@@ -101,8 +119,8 @@ const Login = () => {
               </button>
             </div>
           </div>
-          {/* <ToastContainer /> */}
         </div>
+        <ToastContainer/>
       </div>
     );
 };
