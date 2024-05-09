@@ -5,11 +5,13 @@ import AllFoods from "../Pages/AllFoods";
 import Gallery from "../Pages/Gallery";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
           index:true,
