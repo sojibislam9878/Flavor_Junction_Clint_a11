@@ -19,18 +19,15 @@ const Login = () => {
   const handleHide = () => {
     setIsHide(!isHide);
   };
+
     return (
-        <div className=" bg-gradient-to-tr pb-10 from-indigo-500 via-purple-500 to-pink-500">
-        {/* <Helmet>
-          <title>Login</title>
-        </Helmet> */}
+        <div className=" bg-[#FAF9F5]">
         <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
-          <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
+          <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
+              <h1 className="text-4xl font-bold mt-12">Log In</h1>
               <p className="font-medium mt-6 opacity-70">
-                Thank you for get back to Carfty Corner, let accesss our the best
-                recommendation for you
+                Log in to stay connected
               </p>
               <div className=" flex justify-center items-center gap-2 border-b-2">
                 <span className="material-symbols-outlined mt-10 text-2xl">
@@ -39,7 +36,7 @@ const Login = () => {
                 <input
                   placeholder="email"
                   {...register("email", { required: true })}
-                  className="w-full py-4  outline-none mt-10 bg-base-100"
+                  className="w-full py-4  outline-none mt-10 bg-[#FAF9F5]"
                 />
               </div>
               {errors.email && <span className="text-red-600">Enter Email</span>}
@@ -52,7 +49,7 @@ const Login = () => {
                     type={isHide ? "text" : "password"}
                     placeholder="password"
                     {...register("password", { required: true })}
-                    className="w-full py-4 outline-none mt-6 bg-base-100"
+                    className="w-full py-4 outline-none mt-6 bg-[#FAF9F5]"
                   />
                 </div>
                 <p
@@ -71,19 +68,19 @@ const Login = () => {
               {errors.password && (
                 <span className="text-red-600">Enter Password</span>
               )}
-              <p className="flex justify-end text-blue-500 font-bold my-8">
+              <p className="flex justify-end text-[#EA6A12] font-bold my-8">
                 Forgot your Password ?
               </p>
               <input
                 type="submit"
-                value="Sign In"
-                className="btn w-full bg-blue-500 text-white text-lg border-none"
+                value="Log In"
+                className="btn w-full bg-[#EA6A12] hover:bg-[#C75A0F] text-white text-lg border-none"
               />
             </form>
             <p className="text-center mt-6 mb-8 font-medium opacity-80 text-lg">
               <span className="opacity-80">Do not have an account?</span>{" "}
               <Link to="/registration">
-                <span className="text-blue-500 font-bold">Register Here</span>
+                <span className="text-[#EA6A12] font-bold">Register Here</span>
               </Link>
             </p>
             <div className="divider">OR</div>

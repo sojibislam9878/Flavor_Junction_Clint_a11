@@ -6,8 +6,8 @@ const Navbar = () => {
   const activeLink = `bg-gradient-to-r from-[#EA6A12] to-[#EA6A12] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
   const user = false;
   return (
-    <div className="sticky top-0 z-40 bg-base-100 shadow-xl ">
-      <div className="navbar bg-base-100 container mx-auto p-4 ">
+    <div className="sticky top-0 z-40 bg-[#FCF9EE] shadow-xl ">
+      <div className="navbar bg-[#FCF9EE] container mx-auto p-4 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

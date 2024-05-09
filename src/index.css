@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+  }
+
+.font-play{
+    font-family: "Playfair Display", serif;
+}
