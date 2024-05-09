@@ -1,8 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
+import Root from "../Pages/Root";
+import Home from "../Pages/Home";
+import AllFoods from "../Pages/AllFoods";
+import Gallery from "../Pages/Gallery";
 
 export const router = createBrowserRouter([
     {
       path: "/",
-      element: <div className="text-3xl text-red-600 font-bold">clint site file complete push ready <button className="btn btn-accent">Accent</button></div>,
+      element: <Root></Root>,
+      children:[
+        {
+          index:true,
+          element:<Home></Home>,
+        },
+        {
+          path:"/allfoods",
+          element:<AllFoods></AllFoods>,
+        },
+        {
+          path:"/gallery",
+          element:<Gallery></Gallery>,
+        },
+      ]
     },
   ]);
