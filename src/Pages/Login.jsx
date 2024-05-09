@@ -79,7 +79,7 @@ const Login = () => {
             </form>
             <p className="text-center mt-6 mb-8 font-medium opacity-80 text-lg">
               <span className="opacity-80">Do not have an account?</span>{" "}
-              <Link to="/registration">
+              <Link to="/register">
                 <span className="text-[#EA6A12] font-bold">Register Here</span>
               </Link>
             </p>
