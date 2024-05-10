@@ -4,6 +4,22 @@ import PropTypes from 'prop-types';
 const MyAddedCard = ({card}) => {
     const {food_name , price , food_origin , purchase_count , quantity , _id ,photo_url
     }= card || {}
+
+
+    const handleDelete=_id=>{
+        console.log('delete', _id);
+        fetch(`http://localhost:3000/delete/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              // location.reload()
+              alert("deleted")
+            }
+          });
+    }
     return (
         <div>
       <div className="card card-compact bg-base-100 shadow-xl h-full">
@@ -43,7 +59,7 @@ const MyAddedCard = ({card}) => {
               </button>
             </Link>
             <button
-            //   onClick={() => handleDelete(_id)}
+              onClick={() => handleDelete(_id)}
               className="btn w-full bg-red-500 text-white hover:bg-red-700 mt-2"
             >
               {/* <RiDeleteBin2Fill className="text-xl" /> */}

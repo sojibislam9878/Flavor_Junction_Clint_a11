@@ -36,7 +36,7 @@ const UpdateCard = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount) {
-          console.log("succes");
+          alert("success")
           reset();
         }
       });
@@ -45,7 +45,7 @@ const UpdateCard = () => {
         <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6">Add a new food</h1>
+        <h1 className="text-4xl font-extrabold mt-6">Update {food_name} Info</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
@@ -142,7 +142,7 @@ const UpdateCard = () => {
         </div>
         <input
           type="submit"
-          value="Add"
+          value="Update"
           className="border w-full btn mt-6 text-lg font-bold"
         />
       </form>
