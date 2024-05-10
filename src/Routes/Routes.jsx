@@ -10,6 +10,7 @@ import FoodDetails from "../Pages/FoodDetails";
 import FoodPurchase from "../Pages/FoodPurchase";
 import AddFood from "../Pages/AddFood";
 import MyAddedFoods from "../Pages/MyAddedFoods";
+import UpdateCard from "../Components/UpdateCard";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
         {
           path:"/myaddedfoods",
           element:<MyAddedFoods></MyAddedFoods>,
+        },
+        {
+          path:"/update/:id",
+          element:<UpdateCard></UpdateCard>,
         },
       ]
     },
