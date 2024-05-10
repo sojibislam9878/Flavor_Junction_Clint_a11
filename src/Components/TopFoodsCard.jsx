@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const TopFoodsCard = ({food}) => {
-    const {_id, food_name, photo_url, food_category, price} = food || {}
+    const {_id, food_name, food_category, price} = food || {}
     const oldPrice = parseInt(price) + 6.99
 
     const slicedOldPrice = parseFloat(oldPrice.toString().slice(0,5))
