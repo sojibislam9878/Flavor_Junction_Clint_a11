@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const TopFoodsCard = ({food}) => {
-    const {_id, food_name, food_category, price , photo_url} = food || {}
+const AllFoodCard = ({food}) => {
+    const {_id, food_name, food_category, price, quantity , photo_url} = food || {}
     const oldPrice = parseInt(price) + 6.99
 
     const slicedOldPrice = parseFloat(oldPrice.toString().slice(0,5))
 
     console.log(slicedOldPrice);
-  return (
-    <div>
+    return (
+        <div>
       <div className="card card-compact bg-base-100 shadow-xl">
         <figure>
           <img
@@ -21,6 +21,7 @@ const TopFoodsCard = ({food}) => {
           <h2 className="card-title">{food_name}</h2>
           <p>{food_category}</p>
           <p className="flex gap-6">$ {price} <del>$ {slicedOldPrice}</del></p>
+          <p>Quantity: {quantity}</p>
           <div className="card-actions">
             <Link to={`/details/${_id}`}>
             <button className="btn bg-[#EA6A12] text-white hover:bg-[#C75A0F]">Details</button>
@@ -29,9 +30,9 @@ const TopFoodsCard = ({food}) => {
         </div>
       </div>
     </div>
-  );
+    );
 };
-TopFoodsCard.propTypes = {
-  food: PropTypes.object
-};
-export default TopFoodsCard;
+AllFoodCard.propTypes = {
+    food: PropTypes.object
+  };
+export default AllFoodCard;

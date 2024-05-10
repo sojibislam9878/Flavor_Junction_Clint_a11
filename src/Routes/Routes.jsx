@@ -7,6 +7,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ErrorPage from "../Pages/ErrorPage";
 import FoodDetails from "../Pages/FoodDetails";
+import FoodPurchase from "../Pages/FoodPurchase";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
         {
           path:"/details/:id",
           element:<FoodDetails></FoodDetails>,
+        },
+        {
+          path:"/foodpurchase/:id",
+          element:<FoodPurchase></FoodPurchase>,
         },
       ]
     },

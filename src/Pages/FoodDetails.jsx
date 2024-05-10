@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const FoodDetails = () => {
     const {id} =useParams()
@@ -15,7 +15,7 @@ const FoodDetails = () => {
     },[id])
 
     const { food_name, food_category, price, description , made_by , 
-      food_origin} = singleFood || {}
+      food_origin , photo_url} = singleFood || {}
 
 
     return (
@@ -26,7 +26,7 @@ const FoodDetails = () => {
       <div className=" lg:w-1/3 flex justify-center items-center">
         <img
           className="h-full w-full object-cover rounded-xl"
-          src="photo"
+          src={photo_url}
           alt=""
         />
       </div>
@@ -59,10 +59,12 @@ const FoodDetails = () => {
           </table>
         </div>
         <div className=" pb-5 mt-7">
+          <Link to={`/foodpurchase/${id}`}>
           <button className="bg-[#EA6A12] hover:bg-[#C75A0F] transition-all duration-300 p-5 mt-3 w-full rounded-lg text-white font-medium flex justify-center items-center gap-3">
             <span className="material-symbols-outlined">shopping_bag</span>
             <span>Purchase Now</span>
           </button>
+          </Link>
         </div>
       </div>
     </div>
