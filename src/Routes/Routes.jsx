@@ -8,6 +8,7 @@ import Register from "../Pages/Register";
 import ErrorPage from "../Pages/ErrorPage";
 import FoodDetails from "../Pages/FoodDetails";
 import FoodPurchase from "../Pages/FoodPurchase";
+import AddFood from "../Pages/AddFood";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path:"/foodpurchase/:id",
           element:<FoodPurchase></FoodPurchase>,
+        },
+        {
+          path:"/addfood",
+          element:<AddFood></AddFood>,
         },
       ]
     },

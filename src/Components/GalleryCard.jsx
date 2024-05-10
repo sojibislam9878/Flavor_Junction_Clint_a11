@@ -1,5 +1,4 @@
-
-
+import PropTypes from 'prop-types';
 const GalleryCard = ({data}) => {
     const {displayName, Feedback , PhotoURL}=data ||{}
     return (
@@ -20,5 +19,7 @@ const GalleryCard = ({data}) => {
       </div>
     );
 };
-
+GalleryCard.propTypes = {
+    data: PropTypes.object
+  };
 export default GalleryCard;
