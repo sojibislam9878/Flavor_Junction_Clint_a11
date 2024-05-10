@@ -9,6 +9,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import FoodDetails from "../Pages/FoodDetails";
 import FoodPurchase from "../Pages/FoodPurchase";
 import AddFood from "../Pages/AddFood";
+import MyAddedFoods from "../Pages/MyAddedFoods";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
         {
           path:"/addfood",
           element:<AddFood></AddFood>,
+        },
+        {
+          path:"/myaddedfoods",
+          element:<MyAddedFoods></MyAddedFoods>,
         },
       ]
     },
