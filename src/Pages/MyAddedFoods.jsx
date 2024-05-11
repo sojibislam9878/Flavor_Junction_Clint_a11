@@ -6,12 +6,12 @@ const MyAddedFoods = () => {
 const {user} = useAuth()
 const {email} =user || {}
 
+console.log(email);
+
     const [myAddedFoods, setMyAddedFoods]=useState([])
 
-    console.log(email);
-
     useEffect(()=>{
-        fetch(`http://localhost:3000/myaddedfoods/${email}`)
+        fetch(`http://localhost:3000/myaddedfoods/${email}` , {credentials: "include"})
         .then(res=>res.json())
         .then(data=>{
             setMyAddedFoods(data)
