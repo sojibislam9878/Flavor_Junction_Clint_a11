@@ -6,11 +6,12 @@ import axios from "axios";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+  const [loading, setLoading]=useState(true)
 
 
     // login with email and password
     const createUserWithEmail = (email, password, toast) => {
-        // setLoading(true);
+        setLoading(true);
         if (password.length < 6) {
           return toast.warn("Password must be at least 6 characters long", {
             position: "top-right",
@@ -66,7 +67,7 @@ const AuthProvider = ({ children }) => {
 
    // update user
    const updateUser = (name, photo) => {
-    // setLoading(true);
+    setLoading(true);
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -103,7 +104,7 @@ const AuthProvider = ({ children }) => {
           console.log(res.data);
         })
        }
-    //    setLoading(false);
+       setLoading(false);
      });
      return () => unsubcribe();
    }, [user?.email]);
@@ -124,7 +125,8 @@ const AuthProvider = ({ children }) => {
     login,
     updateUser,
     user, 
-    logout
+    logout,
+    loading
 
   };
 

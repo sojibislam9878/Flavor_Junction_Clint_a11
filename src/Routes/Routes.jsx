@@ -11,6 +11,7 @@ import FoodPurchase from "../Pages/FoodPurchase";
 import AddFood from "../Pages/AddFood";
 import MyAddedFoods from "../Pages/MyAddedFoods";
 import UpdateCard from "../Components/UpdateCard";
+import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 
 export const router = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/myaddedfoods",
-          element:<MyAddedFoods></MyAddedFoods>,
+          element:<PrivetRoute><MyAddedFoods></MyAddedFoods></PrivetRoute>,
         },
         {
           path:"/update/:id",
