@@ -7,6 +7,7 @@ const Home = () => {
         <div>
            <Slider></Slider>
            <TopFoodsSection></TopFoodsSection>
+           
         </div>
     );
 };
