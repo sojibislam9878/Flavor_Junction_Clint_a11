@@ -1,8 +1,12 @@
-# React + Vite
+# Flavor Junction
+Here is website live URL-->https://sojibislam9878assignment11.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features and characteristics
+* This website is responsive for mobile, tab and desktop.
+* This website uses a real database (MongoDB)
+* This website's api secured by JWT
+* This website hosted on google firebase.
+* On this website uses React Toast and Sweet alart for Better experience.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Assignment_ID: assignment_category_0005
+ Restaurant Management website
