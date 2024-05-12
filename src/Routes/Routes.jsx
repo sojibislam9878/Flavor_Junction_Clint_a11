@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/details/:id",
-          element:<FoodDetails></FoodDetails>,
+          element:<PrivetRoute><FoodDetails></FoodDetails></PrivetRoute>,
         },
         {
           path:"/foodpurchase/:id",
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/addfood",
-          element:<AddFood></AddFood>,
+          element:<PrivetRoute><AddFood></AddFood></PrivetRoute>,
         },
         {
           path:"/myaddedfoods",
