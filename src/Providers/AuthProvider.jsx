@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebaseConfig";
 import axios from "axios";
+import Swal from "sweetalert2";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -48,15 +49,12 @@ const AuthProvider = ({ children }) => {
             theme: "light",
           });
         }
-        toast.success("Account created successfuly", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Account created successfuly",
+          showConfirmButton: false,
+          timer: 1500
         });
         return createUserWithEmailAndPassword(auth, email, password);
       };

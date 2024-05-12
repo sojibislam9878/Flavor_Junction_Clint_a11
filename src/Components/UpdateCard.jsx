@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCard = () => {
     const {id} = useParams()
@@ -36,7 +37,13 @@ const UpdateCard = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount) {
-          alert("success")
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your food has been updateded",
+            showConfirmButton: false,
+            timer: 2000
+          });
           reset();
         }
       });

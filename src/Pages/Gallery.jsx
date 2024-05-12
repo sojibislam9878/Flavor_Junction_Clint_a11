@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import { useEffect, useState } from "react";
 import GalleryCard from "../Components/GalleryCard";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   const { user } = useAuth();
@@ -29,7 +31,13 @@ const Gallery = () => {
         if (data.insertedId) {
           console.log("succes");
           reset();
-          alert("added")
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Successfuly added",
+            showConfirmButton: false,
+            timer: 1500
+          });
         }
       });
   };
@@ -52,9 +60,16 @@ console.log(galleryData);
         {/* The button to open modal */}
         <div className="flex justify-end  my-6">
           <div>
-            <label htmlFor="my_modal_6" className="btn animate-pulse bg-blue-800 text-white">
+          <div>
+          {
+            user?(<label htmlFor="my_modal_6" className="btn animate-bounce bg-blue-600 hover:bg-blue-800 text-white">
+            Add
+          </label>):(<Link to="/login"><label htmlFor="" className="btn bg-[#999] hover:bg-[#999] text-white">
               Add
-            </label>
+            </label></Link>)
+          
+          }
+          </div>
 
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />

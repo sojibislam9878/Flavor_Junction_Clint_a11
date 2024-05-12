@@ -15,7 +15,7 @@ const FoodDetails = () => {
     },[id])
 
     const { food_name, food_category, price, description , made_by , 
-      food_origin , photo_url} = singleFood || {}
+      food_origin , photo_url, quantity} = singleFood || {}
 
 
     return (
@@ -54,6 +54,10 @@ const FoodDetails = () => {
             <tr className="">
               <td className="w-2/3 opacity-70">Made By</td>
               <td className="font-medium">{made_by}</td>
+            </tr>
+            <tr className="">
+              <td className="w-2/3 opacity-70">Quantity</td>
+              <td className="font-medium">{quantity}</td>
             </tr>
             </tbody>
           </table>

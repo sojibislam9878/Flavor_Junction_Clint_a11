@@ -5,6 +5,7 @@ import MyAddedCard from "../Components/MyAddedCard";
 const MyAddedFoods = () => {
 const {user} = useAuth()
 const {email} =user || {}
+const [reload, setReload]=useState(false)
 
 console.log(email);
 
@@ -16,13 +17,13 @@ console.log(email);
         .then(data=>{
             setMyAddedFoods(data)
         })
-    },[email])
+    },[email , reload])
     return (
         <div className="container mx-auto p-4">
             <h1>my added foods</h1>
             <div className="grid lg:grid-cols-3 gap-6 mt-14">
             {
-                myAddedFoods.map(card=><MyAddedCard key={card._id} card={card}></MyAddedCard>)
+                myAddedFoods.map(card=><MyAddedCard key={card._id} card={card} reload={reload} setReload={setReload}></MyAddedCard>)
             }
             </div>
         </div>

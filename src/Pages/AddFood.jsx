@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const AddFood = () => {
   const { user } = useAuth();
@@ -27,7 +28,13 @@ const AddFood = () => {
       .then((data) => {
         if (data.insertedId) {
             console.log("hello");
-            alert("added")
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Your food has been saved",
+              showConfirmButton: false,
+              timer: 1500
+            });
             reset()
         }
       });

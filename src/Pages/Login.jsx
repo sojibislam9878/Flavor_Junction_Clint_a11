@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 const Login = () => {
 //     const Locations = useLocation();
@@ -20,15 +20,10 @@ const Login = () => {
       console.log(res.user);
     })
     .catch(() => {
-      toast.error("Wrong email or password! check again", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Your password or email wrong",
       });
     });
   };
@@ -120,7 +115,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <ToastContainer/>
       </div>
     );
 };
