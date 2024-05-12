@@ -13,7 +13,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { login } = useAuth();
+  const { login ,googleSignUP, githubSignUP} = useAuth();
   const onSubmit = (data) => {
     login(data.email, data.password)
     .then((res) => {
@@ -105,13 +105,13 @@ const Login = () => {
             {/* social login */}
             <div className="flex justify-center flex-wrap gap-x-8 gap-y-3 mt-8 mb-16">
               <button 
-            //   onClick={googleSignUP} 
+              onClick={googleSignUP} 
               className="btn flex items-center">
                 <img className="w-12 " src="google.png" alt="" />
                 <p>Sign Up With Google</p>
               </button>
               <button
-                // onClick={githubSignUP}
+                onClick={githubSignUP}
                 className="btn flex justify-between items-center"
               >
                 <img className="w-7" src="github.png" alt="" />
