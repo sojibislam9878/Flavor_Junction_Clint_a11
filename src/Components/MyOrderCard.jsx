@@ -1,8 +1,44 @@
 import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
 
-const MyOrderCard = ({card}) => {
-    const {foodName , price , food_origin, date , quantitys , photo_url, made_by
+const MyOrderCard = ({card , reload , setReload}) => {
+    const {foodName , price , food_origin, date , quantitys , photo_url, made_by , _id
     }= card || {}
+
+    const handleDelete=_id=>{
+        console.log('delete', _id);
+
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            fetch(`http://localhost:3000/orderdelete/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              setReload(!reload)
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
+          });
+          }
+        });
+
+
+        
+    }
     return (
         <div>
         <div className="card card-compact bg-base-100 shadow-xl h-full">
@@ -40,7 +76,7 @@ const MyOrderCard = ({card}) => {
             </div>
             <div className="">
               <button
-                // onClick={() => handleDelete(_id)}
+                onClick={() => handleDelete(_id)}
                 className="btn w-full bg-red-500 text-white hover:bg-red-700 mt-2"
               >
                 {/* <RiDeleteBin2Fill className="text-xl" /> */}
