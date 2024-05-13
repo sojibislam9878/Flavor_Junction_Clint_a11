@@ -12,7 +12,7 @@ console.log(email);
     const [myAddedFoods, setMyAddedFoods]=useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/myaddedfoods/${email}` , {credentials: "include"})
+        fetch(`https://assignment11-chi.vercel.app/myaddedfoods/${email}` , {credentials: "include"})
         .then(res=>res.json())
         .then(data=>{
             setMyAddedFoods(data)

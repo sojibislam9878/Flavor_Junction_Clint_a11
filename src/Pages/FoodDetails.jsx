@@ -6,7 +6,7 @@ const FoodDetails = () => {
     const [singleFood, setSingleFood]=useState({})
 
     useEffect(()=>{
-      fetch(`http://localhost:3000/singleFood/${id}`)
+      fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
       .then(res=>res.json())
       .then(data=>{
         console.log(data);

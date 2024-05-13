@@ -17,7 +17,7 @@ const AddFood = () => {
 
     const fullData = {...data, email, displayName , purchase_count}
 
-    fetch("http://localhost:3000/allfoods", {
+    fetch("https://assignment11-chi.vercel.app/allfoods", {
       method: "POST",
       headers: {
         "content-type": "application/json",

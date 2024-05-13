@@ -18,7 +18,7 @@ const Gallery = () => {
   const onSubmit = (data) => {
     console.log(data);
     const finalData = {...data, displayName}
-    fetch("http://localhost:3000/gallery", {
+    fetch("https://assignment11-chi.vercel.app/gallery", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,7 +43,7 @@ const Gallery = () => {
   };
 
   useEffect(()=>{
-    fetch("http://localhost:3000/gallery")
+    fetch("https://assignment11-chi.vercel.app/gallery")
     .then(res=>res.json())
     .then(data=>{
         setGalleryData(data)

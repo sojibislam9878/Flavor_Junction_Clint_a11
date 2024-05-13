@@ -157,7 +157,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={logout}
-                className="btn mt-1 bg-[#EA6A12] text-white font-bold hover:bg-[#EA6A12] hidden md:flex"
+                className="btn mt-1 bg-[#EA6A12] text-white font-bold hover:bg-[#C75A0F] hidden md:flex"
               >
                 Logout
               </button>

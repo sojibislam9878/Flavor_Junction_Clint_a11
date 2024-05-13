@@ -6,7 +6,7 @@ const TopFoodsSection = () => {
     const [foods, setFoods]=useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3000/allfoods")
+        fetch("https://assignment11-chi.vercel.app/allfoods")
         .then(res=>res.json())
         .then(data=>{
             const sixFoods = data.slice(0, 6)

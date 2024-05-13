@@ -20,7 +20,7 @@ const MyAddedCard = ({card , reload, setReload}) => {
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:3000/delete/${_id}`, {
+            fetch(`https://assignment11-chi.vercel.app/delete/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

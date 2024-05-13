@@ -16,7 +16,7 @@ const UpdateCard = () => {
       } = useForm();
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/singleFood/${id}`)
+        fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
@@ -26,7 +26,7 @@ const UpdateCard = () => {
 
     const onSubmit=data=>{
         console.log(data);
-        fetch(`http://localhost:3000/updateCard/${id}`, {
+        fetch(`https://assignment11-chi.vercel.app/updateCard/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

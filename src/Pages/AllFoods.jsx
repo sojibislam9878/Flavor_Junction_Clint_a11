@@ -14,9 +14,19 @@ const AllFoods = () => {
   console.log(sort);
   const pages = [...Array(totalPage).keys()].map((i) => i + 1);
 
+  // useEffect(()=>{
+  //   fetch(
+  //     `https://assignment11-chi.vercel.app/allFoodsForPaginations`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setAllFoodCards(data);
+  //     });
+  // }, []);
+
   useEffect(() => {
     fetch(
-      `http://localhost:3000/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
+      `https://assignment11-chi.vercel.app/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -27,7 +37,7 @@ const AllFoods = () => {
   // for pagination
 
   useEffect(() => {
-    fetch(`http://localhost:3000/allFoodsCont?filter=${filter}&search=${search}`)
+    fetch(`https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setDataCount(data.count);

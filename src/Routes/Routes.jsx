@@ -13,6 +13,7 @@ import MyAddedFoods from "../Pages/MyAddedFoods";
 import UpdateCard from "../Components/UpdateCard";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import MyOrderedFoodItems from "../Pages/MyOrderedFoodItems";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
         {
           path:"/myorder",
           element:<PrivetRoute><MyOrderedFoodItems></MyOrderedFoodItems></PrivetRoute>,
+        },
+        {
+          path:"/myorderrr",
+          element:<LoadingSpinner></LoadingSpinner>,
         },
       ]
     },

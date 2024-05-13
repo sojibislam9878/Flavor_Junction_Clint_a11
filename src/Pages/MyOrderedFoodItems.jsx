@@ -7,7 +7,7 @@ const MyOrderedFoodItems = () => {
     const [reload, setReload]=useState(false)
     const [data, setData]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:3000/purchaseFoods/${user?.email}`)
+        fetch(`https://assignment11-chi.vercel.app/purchaseFoods/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setData(data)

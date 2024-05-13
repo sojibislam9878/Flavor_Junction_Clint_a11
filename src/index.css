@@ -11,3 +11,8 @@ body {
 .font-play{
     font-family: "Playfair Display", serif;
 }
+
+body{
+  /* background: linear-gradient(#FAF4F1, #FCFAF1); */
+  background: linear-gradient(240deg,#fdefe7, #fdfaea);
+}

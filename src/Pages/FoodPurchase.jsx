@@ -14,7 +14,7 @@ const FoodPurchase = () => {
     const [singleFood, setSingleFood]=useState({})
 
     useEffect(()=>{
-      fetch(`http://localhost:3000/singleFood/${id}`)
+      fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
       .then(res=>res.json())
       .then(data=>{
         setSingleFood(data)
@@ -51,7 +51,7 @@ const handlePurchase = e => {
   console.log(purchaseFoodData);
   e.target.reset()
 
-  fetch("http://localhost:3000/purchaseFoods", {
+  fetch("https://assignment11-chi.vercel.app/purchaseFoods", {
       method: "POST",
       headers: {
         "content-type": "application/json",

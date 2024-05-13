@@ -91,12 +91,12 @@ const AuthProvider = ({ children }) => {
       console.log(currentUser);
 
        if (currentUser) {
-         axios.post("http://localhost:3000/jwt",logingUser, {withCredentials : true})
+         axios.post("https://assignment11-chi.vercel.app/jwt",logingUser, {withCredentials : true})
          .then(res=>{
           console.log(res.data);
          })
        }else{
-        axios.post("http://localhost:3000/logout", logingUser,{
+        axios.post("https://assignment11-chi.vercel.app/logout", logingUser,{
           withCredentials:true
         }).then(res=>{
           console.log(res.data);
