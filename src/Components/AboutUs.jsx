@@ -2,10 +2,10 @@ import aboutus from "../assets/images/aboutus.jpg"
 const AboutUs = () => {
     return (
         <div className="lg:flex justify-between container mx-auto p-4 mt-36 gap-10">
-            <div className="flex-1 border overflow-hidden ">
-                <img src={aboutus} alt="" className="hover:scale-110 duration-500 transition-all w-full h-full m-auto object-cover" />
+            <div className="flex-1 border overflow-hidden rounded-lg">
+                <img src={aboutus} alt="" className="scale-110 hover:scale-100 duration-500 transition-all w-full h-full m-auto object-cover grayscale hover:grayscale-0" />
             </div>
-            <div className="flex-1 mt-14 lg:mt-0">
+            <div className="flex-1 mt-14 lg:mt-0 h-full">
                 <h1 className="text-4xl font-extrabold">Who We Are?</h1>
                 <p className="leading-7 opacity-80 mt-6">Holisticly pursue market positioning ROI for 24/365 infomediaries. Progressively provide access to granular applications and business core competencies. Assertively myocardinate premier innovation through business schemas. Rapidiously empower standardized alignments whereas.</p>
                 <div className="mt-8">

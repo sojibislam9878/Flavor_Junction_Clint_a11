@@ -14,13 +14,12 @@ const FoodDetails = () => {
       })
     },[id])
 
-    const { food_name, food_category, price, description , made_by , 
+    const { food_name, food_category, price, description , displayName , 
       food_origin , photo_url, quantity} = singleFood || {}
 
 
     return (
         <div className="container mx-auto p-4">
-            <h1>I am food details of {id}</h1>
             <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 md:mb-28 mb-12">
       
       <div className=" lg:w-1/3 flex justify-center items-center">
@@ -53,7 +52,7 @@ const FoodDetails = () => {
             </tr>
             <tr className="">
               <td className="w-2/3 opacity-70">Made By</td>
-              <td className="font-medium">{made_by}</td>
+              <td className="font-medium">{displayName}</td>
             </tr>
             <tr className="">
               <td className="w-2/3 opacity-70">Quantity</td>

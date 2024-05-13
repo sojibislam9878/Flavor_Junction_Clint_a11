@@ -25,6 +25,17 @@ const Register = () => {
       const { email, password, name, photo } = data;
       createUserWithEmail(email, password, toast).then(() => {
         updateUser(name, photo);
+        fetch("https://assignment11-chi.vercel.app/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
         navigate(form);
         
       });

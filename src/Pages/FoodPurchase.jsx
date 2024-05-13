@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const FoodPurchase = () => {
   const {user}= useAuth()
-  const {email, displayName}= user || {}
+  const { displayName}= user || {}
 
     const {id}=useParams()
     const [singleFood, setSingleFood]=useState({})
@@ -20,7 +20,7 @@ const FoodPurchase = () => {
       })
     },[id])
 
-    const { food_name, price, quantity ,photo_url, made_by} = singleFood || {}
+    const { food_name, price, quantity ,photo_url, made_by,email} = singleFood || {}
     console.log(photo_url);
 
     if (quantity == 0) { Swal.fire({
@@ -32,14 +32,23 @@ const FoodPurchase = () => {
     const date = new Date().toLocaleDateString('en-GB')
     console.log(date);
 
+    
+
 const handlePurchase = e => {
   e.preventDefault()
+  if ( user?.email === email ) {
+    return Swal.fire({
+      icon: "error",
+      title: "Sorry",
+      text: "You can't buy your own product",
+    });
+  }
   const foodName =e.target.foodName.value
   const price =e.target.price.value
   const quantitys =e.target.quantity.value
 
   const purchaseFood = {foodName, price, quantitys}
-  const purchaseFoodData = {...purchaseFood, buyerEmail:email, buyerName:displayName , photo_url, made_by , date}
+  const purchaseFoodData = {...purchaseFood, buyerEmail:user?.email, buyerName:displayName , photo_url, made_by , date}
   if (quantitys>quantity) {
     return Swal.fire({
       icon: "error",

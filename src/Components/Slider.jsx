@@ -1,7 +1,5 @@
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Typewriter } from "react-simple-typewriter";
-// import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Slider = () => {
     return (
-        <div className="-mt-3">
+        <div className="-mt-3 text-center lg:text-left">
       <Swiper
         modules={[Navigation, Pagination, A11y , Autoplay ]}
         autoplay={{
@@ -32,35 +30,26 @@ const Slider = () => {
           <div
             style={{
               backgroundImage:
-                `linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${banner1})`,
+                `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${banner1})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
             className="h-[550px] lg:min-h-[calc(100vh-92px)]"
           >
-            <div className="container mx-auto md:p-4 text-white text-center mt-3">
+            <div className="container mx-auto md:p-4 text-white mt-3">
               <h1
                 data-aos="fade-down"
                 data-aos-duration="1000"
                 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]"
               >
-                <Typewriter
-                  words={[" The Enigmatic World of Stone Sculpture"]}
-                  loop={false}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-                {/* <Cursor></Cursor> */}
+                Food is every thing
               </h1>
               <p
                 data-aos="fade-down"
                 data-aos-delay="700"
                 data-aos-duration="1400"
-                className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 px-4"
+                className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6"
               >
                 Stone sculpture, a timeless tradition that spans continents and
                 epochs, embodies the essence of endurance and beauty. From the
@@ -85,26 +74,18 @@ const Slider = () => {
           <div
             style={{
               backgroundImage:
-              `linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${banner2})`,
+              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${banner2})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
             className="h-[550px] lg:lg:min-h-[calc(100vh-92px)]"
           >
-            <div className="container mx-auto md:p-4 text-white text-center mt-3">
+            <div className="container mx-auto md:p-4 text-white mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
-                <Typewriter
-                  words={["The Art of Clay Sculpture"]}
-                  loop={false}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
+                I love food very much
               </h1>
-              <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 px-4">
+              <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">
                 Clay sculpture, an ancient and revered art form, holds within it
                 the power to captivate, inspire, and evoke profound emotions.
                 From the moment the artists hands touch the malleable clay, a
@@ -128,26 +109,18 @@ const Slider = () => {
           <div
             style={{
               backgroundImage:
-              `linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${banner3})`,
+              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${banner3})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
             className="h-[550px] lg:min-h-[calc(100vh-92px)]"
           >
-            <div className="container mx-auto md:p-4 text-white text-center mt-3">
+            <div className="container mx-auto md:p-4 text-white mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
-                <Typewriter
-                  words={["The Artistry of Wood Carving"]}
-                  loop={false}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
+                I want to eat some food
               </h1>
-              <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 px-4">
+              <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">
                 Wood carving is a time-honored craft that transforms a simple
                 piece of wood into a work of art through the skillful
                 manipulation of knives, chisels, and gouges. This ancient
