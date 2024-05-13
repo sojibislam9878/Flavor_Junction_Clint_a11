@@ -166,7 +166,7 @@ const Navbar = () => {
             <div className="hidden md:flex">
               <div>
                 <Link to="/login">
-                  <button className="btn bg-[#EA6A12] text-white font-bold hover:bg-[#C75A0F]">
+                  <button className="btn bg-[#EA6A12]  hover:bg-[#C75A0F] text-white font-bold">
                     Login
                   </button>
                 </Link>

@@ -11,7 +11,7 @@ const ContactUs = () => {
         </p>
       </div>
       <div className="p-4 rounded-xl mt-10">
-        <div className="flex gap-4">
+        <div className="md:flex gap-4">
           <input
             type="text"
             className=" p-4 bg-[#f7f5f4] rounded-lg mt-2  w-full focus:outline-none"

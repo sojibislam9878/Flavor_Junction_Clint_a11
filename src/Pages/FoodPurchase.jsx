@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 
 const FoodPurchase = () => {
   const {user}= useAuth()
   const {email, displayName}= user || {}
-  const [startDate, setStartDate] = useState(new Date());
 
     const {id}=useParams()
     const [singleFood, setSingleFood]=useState({})
@@ -31,16 +29,17 @@ const FoodPurchase = () => {
         text: "Item is not avaliable",
       });
     }
+    const date = new Date().toLocaleDateString('en-GB')
+    console.log(date);
 
 const handlePurchase = e => {
   e.preventDefault()
   const foodName =e.target.foodName.value
   const price =e.target.price.value
   const quantitys =e.target.quantity.value
-  const date =e.target.date.value
 
-  const purchaseFood = {foodName, price, quantitys, date}
-  const purchaseFoodData = {...purchaseFood, buyerEmail:email, buyerName:displayName , photo_url, made_by }
+  const purchaseFood = {foodName, price, quantitys}
+  const purchaseFoodData = {...purchaseFood, buyerEmail:email, buyerName:displayName , photo_url, made_by , date}
   if (quantitys>quantity) {
     return Swal.fire({
       icon: "error",
@@ -86,7 +85,7 @@ const handlePurchase = e => {
 
       <form onSubmit={handlePurchase} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
-          <div>
+          <div className="col-span-2">
             <p className="font-bold opacity-70">Food Name :</p>
             <input
               type="text"
@@ -119,12 +118,12 @@ const handlePurchase = e => {
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
           </div>
-          <div className="mt-4 md:mt-0 border">
+          {/* <div className="mt-4 md:mt-0 border">
             <p className="font-bold opacity-70">Buying Date:</p>
             <div className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100 border">
             <DatePicker name="date" className=" focus:outline-none" selected={startDate} onChange={(date) => setStartDate(date)} />
             </div>
-          </div>
+          </div> */}
           <div className="mt-4 md:mt-0">
             <p className="font-bold opacity-70">Buyer email :</p>
             <input
