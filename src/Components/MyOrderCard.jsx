@@ -50,7 +50,7 @@ const MyOrderCard = ({card , reload , setReload}) => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#B18B5E] to-[#d6aa76] bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">
               {foodName}
             </h2>
   

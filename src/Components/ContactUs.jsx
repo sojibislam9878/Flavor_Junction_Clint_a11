@@ -1,6 +1,6 @@
 const ContactUs = () => {
     return (
-        <div className="container mx-auto p-4 bg-white mt-36 mb-36 rounded-xl">
+        <div className="container mx-auto p-4 bg-white mt-8 lg:mt-36 md:mt-28 mb-8 md:mb-36 rounded-xl">
             {/* section header */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6 font-garamond">

@@ -10,7 +10,7 @@ const TopFoodsCard = ({food}) => {
     console.log(slicedOldPrice);
   return (
     <div>
-      <div className="card card-compact bg-base-100 shadow-xl">
+      <div className="card card-compact bg-base-100 shadow-xl  h-full">
         <figure>
           <img
             src={photo_url}
@@ -18,9 +18,9 @@ const TopFoodsCard = ({food}) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{food_name}</h2>
-          <p>{food_category}</p>
-          <p className="flex gap-6">$ {price} <del>$ {slicedOldPrice}</del></p>
+          <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">{food_name}</h2>
+          <p className="font-medium text-lg">{food_category}</p>
+          <p className="flex gap-6 font-medium text-lg">$ {price} <span className="text-red-400"><del>$ {slicedOldPrice}</del></span></p>
           <div className="card-actions">
             <Link to={`/details/${_id}`}>
             <button className="btn bg-[#EA6A12] text-white hover:bg-[#C75A0F]">Details</button>

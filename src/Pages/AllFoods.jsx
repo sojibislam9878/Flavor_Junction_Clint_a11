@@ -38,13 +38,12 @@ const AllFoods = () => {
       });
   }, [currentPage, cardPerPage, filter , sort, search]);
 
-  // for pagination
-
   useEffect(() => {
     fetch(`https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setDataCount(data.count);
+        setloading(false)
       });
   }, [filter, search]);
 

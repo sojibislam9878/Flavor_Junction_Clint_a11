@@ -23,7 +23,7 @@ const TopFoodsSection = () => {
 
     console.log(foods);
   return (
-    <div className="md:mt-32 mt-16 md:py-8 container mx-auto p-4">
+    <div className="mt-8 lg:mt-36 md:mt-28 md:py-8 container mx-auto p-4">
         {/* section header */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6 font-garamond">

@@ -1,7 +1,7 @@
 import aboutus from "../assets/images/aboutus.jpg"
 const AboutUs = () => {
     return (
-        <div className="lg:flex justify-between container mx-auto p-4 mt-36 gap-10">
+        <div className="lg:flex justify-between container mx-auto p-4 mt-8 lg:mt-36 md:mt-28 gap-10">
             <div className="flex-1 border overflow-hidden rounded-lg">
                 <img src={aboutus} alt="" className="scale-110 hover:scale-100 duration-500 transition-all w-full h-full m-auto object-cover grayscale hover:grayscale-0" />
             </div>
