@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import loginphoto from "../assets/images/login.png"
 
 const Login = () => {
     const locations = useLocation();
@@ -43,12 +44,18 @@ console.log(locations);
   };
 
     return (
-        <div className=" bg-[#FAF9F5]">
+        <div style={{
+          backgroundImage:
+          `linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(${loginphoto})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }} className=" text-white">
            <Helmet>
         <title>Flavor Junction | Login</title>
       </Helmet>
         <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
-          <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
+          <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-2xl backdrop-blur-md ">
             <form onSubmit={handleSubmit(onSubmit)}>
               <h1 className="text-4xl font-bold mt-12">Log In</h1>
               <p className="font-medium mt-6 opacity-70">
@@ -61,7 +68,7 @@ console.log(locations);
                 <input
                   placeholder="email"
                   {...register("email", { required: true })}
-                  className="w-full py-4  outline-none mt-10 bg-[#FAF9F5]"
+                  className="w-full py-4  outline-none mt-10 bg-transparent placeholder:text-white"
                 />
               </div>
               {errors.email && <span className="text-red-600">Enter Email</span>}
@@ -74,7 +81,7 @@ console.log(locations);
                     type={isHide ? "text" : "password"}
                     placeholder="password"
                     {...register("password", { required: true })}
-                    className="w-full py-4 outline-none mt-6 bg-[#FAF9F5]"
+                    className="w-full py-4 outline-none mt-6 bg-transparent placeholder:text-white"
                   />
                 </div>
                 <p
@@ -103,7 +110,7 @@ console.log(locations);
               />
             </form>
             <p className="text-center mt-6 mb-8 font-medium opacity-80 text-lg">
-              <span className="opacity-80">Do not have an account?</span>{" "}
+              <span className="text-black">Do not have an account?</span>{" "}
               <Link to="/register">
                 <span className="text-[#EA6A12] font-bold">Register Here</span>
               </Link>

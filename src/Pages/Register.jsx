@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import registerPhoto from "../assets/images/register.jpg"
 
 const Register = () => {
     const navigate = useNavigate();
@@ -42,12 +43,18 @@ const Register = () => {
       });
     };
     return (
-        <div className="flex justify-center p-4 pt-10 pb-16 bg-[#FAF9F5]">
+        <div style={{
+          backgroundImage:
+          `linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(${registerPhoto})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }} className="flex justify-center p-4 pt-10 pb-16 text-white">
            <Helmet>
         <title>Flavor Junction | Register</title>
       </Helmet>
       
-      <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
+      <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl backdrop-blur-md">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
           <p className="font-medium mt-6 opacity-70">
@@ -60,7 +67,7 @@ const Register = () => {
             <input
               placeholder="Full Name"
               {...register("name", { required: true })}
-              className="w-full py-4  outline-none mt-10 bg-[#FAF9F5]"
+              className="w-full py-4  outline-none mt-10 bg-transparent placeholder:text-white "
             />
           </div>
           {errors.name && (
@@ -74,7 +81,7 @@ const Register = () => {
           type="email"
             placeholder="Your Email"
             {...register("email", { required: true })}
-            className="w-full py-4  outline-none mt-6 bg-[#FAF9F5]"
+            className="w-full py-4  outline-none mt-6 bg-transparent placeholder:text-white "
           />
           </div>
           {errors.email && <span className="text-red-600">Enter Email</span>}
@@ -84,7 +91,7 @@ const Register = () => {
             type="url"
               placeholder="Your Photo URL"
               {...register("photo", { required: true })}
-              className="w-full py-4  outline-none mt-6 bg-[#FAF9F5]"
+              className="w-full py-4  outline-none mt-6 bg-transparent placeholder:text-white "
             />
           </div>
           {errors.photo && (
@@ -97,7 +104,7 @@ const Register = () => {
               type={isHide ? "text" : "password"}
               placeholder="Your Password"
               {...register("password", { required: true })}
-              className="w-full py-4 outline-none mt-6 bg-[#FAF9F5]"
+              className="w-full py-4 outline-none mt-6 bg-transparent placeholder:text-white "
             />
             </div>
             <p
@@ -119,7 +126,7 @@ const Register = () => {
           <input
             type="submit"
             value="Create Account"
-            className="btn w-full bg-[#EA6A12] text-white text-lg mt-6"
+            className="btn w-full bg-[#EA6A12] text-white text-lg border-none mt-6"
           />
         </form>
         <p className="text-center mt-6 mb-28 font-medium opacity-80 text-lg">
