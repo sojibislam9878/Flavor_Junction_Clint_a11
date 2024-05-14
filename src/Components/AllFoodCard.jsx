@@ -16,7 +16,7 @@ const AllFoodCard = ({food}) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">{food_name}</h2>
+          <h2 className="text-4xl font-bold mt-4 font-play bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">{food_name}</h2>
           <p className="text-lg font-medium">{food_category}</p>
           <p className="flex gap-6 text-lg font-medium">$ {price} <span className="text-red-400"><del>$ {slicedOldPrice}</del></span></p>
           <p className="text-lg font-semibold">Quantity: {quantity}</p>

@@ -18,7 +18,7 @@ const MyAddedCard = ({card }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mt-4 font-play bg-gradient-to-r from-[#EA6A12] to-[#C75A0F] bg-clip-text text-transparent">
             {food_name}
           </h2>
 

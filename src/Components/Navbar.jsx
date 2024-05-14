@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="btn btn-ghost md:text-3xl text-xl font-garamond text-[#EA6A12]"
+            className="btn btn-ghost md:text-3xl text-xl font-play text-[#EA6A12]"
           >
             Flavor Junction
           </Link>

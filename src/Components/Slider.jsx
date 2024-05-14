@@ -41,7 +41,7 @@ const Slider = () => {
               <h1
                 data-aos="fade-down"
                 data-aos-duration="1000"
-                className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]"
+                className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-play lg:pt-40 md:leading-10 lg:leading-[60px]"
               >
                 Feast Your Senses!
               </h1>
@@ -78,7 +78,7 @@ const Slider = () => {
             className="h-[550px] lg:lg:min-h-[calc(100vh-92px)]"
           >
             <div className="container mx-auto md:p-4 text-white mt-3">
-              <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
+              <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-play lg:pt-40 md:leading-10 lg:leading-[60px]">
               Flavor Junction Where Flavor Takes Center Stage
               </h1>
               <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">
@@ -109,7 +109,7 @@ const Slider = () => {
             className="h-[550px] lg:min-h-[calc(100vh-92px)]"
           >
             <div className="container mx-auto md:p-4 text-white mt-3">
-              <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
+              <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-play lg:pt-40 md:leading-10 lg:leading-[60px]">
               Taste the Difference!
               </h1>
               <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">

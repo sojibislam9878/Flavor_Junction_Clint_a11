@@ -69,8 +69,18 @@ if (loading) {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-            }} className="text-center py-6 md:my-16">
-        <h1 className="font-extrabold text-4xl text-white">Gallery</h1>
+            }} className="text-center py-16 md:my-16">
+        <div>
+        <h1 className="font-extrabold text-4xl font-play text-white">Gallery</h1>
+        <div className="flex justify-center text-white">
+           <div className="text-sm breadcrumbs">
+            <ul>
+              <li><a>Home</a></li> 
+              <li><a>Gallery</a></li> 
+            </ul>
+           </div>
+        </div>
+        </div>
       </div>
       <div className="container mx-auto p-4">
         

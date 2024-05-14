@@ -26,7 +26,7 @@ const TopFoodsSection = () => {
     <div className="mt-8 lg:mt-36 md:mt-28 md:py-8 container mx-auto p-4">
         {/* section header */}
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6 font-garamond">
+        <h1 className="text-4xl font-extrabold mt-6 font-play">
           Top Foods
         </h1>
         <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">

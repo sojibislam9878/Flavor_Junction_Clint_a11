@@ -92,8 +92,18 @@ const AllFoods = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-            }} className=" py-6 text-center md:my-16">
-        <h1 className="font-extrabold text-4xl text-white">All Foods</h1>
+            }} className=" py-16 text-center md:my-16">
+        <div>
+        <h1 className="font-extrabold font-play text-4xl text-white">All Foods</h1>
+        <div className="flex justify-center text-white">
+           <div className="text-sm breadcrumbs">
+            <ul>
+              <li><a>Home</a></li> 
+              <li><a>All Foods</a></li> 
+            </ul>
+           </div>
+        </div>
+        </div>
       </div>
       {/* scetion body  */}
       <div className="container mx-auto p-4">
