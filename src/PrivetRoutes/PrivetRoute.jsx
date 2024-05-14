@@ -10,10 +10,10 @@ const PrivetRoute = ({ children }) => {
     return <Spinner></Spinner>
     // return <h1>hello</h1>;
   }
-  if (!user) {
-    return <Navigate to="/login" state={location?.pathname || "/"}></Navigate>;
+  if (user) {
+    return <div>{children}</div>;
   }
-  return <div>{children}</div>;
+  return <Navigate state={location?.pathname} to="/login" ></Navigate>;
 };
 PrivetRoute.propTypes = {
   children: PropTypes.element.isRequired,

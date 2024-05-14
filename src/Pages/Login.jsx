@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
-//     const Locations = useLocation();
-//   const navigate = useNavigate();
+    const locations = useLocation();
+  const navigate = useNavigate();
+console.log(locations);
   const {
     register,
     handleSubmit,
@@ -19,6 +20,9 @@ const Login = () => {
     login(data.email, data.password)
     .then((res) => {
       console.log(res.user);
+
+      navigate(locations?.state ? locations.state : "/")
+
     })
     .catch(() => {
       Swal.fire({
@@ -28,6 +32,10 @@ const Login = () => {
       });
     });
   };
+
+  const handleGoogleSignUP =()=>{
+    googleSignUP()
+  }
 
   const [isHide, setIsHide] = useState(false);
   const handleHide = () => {
@@ -104,7 +112,7 @@ const Login = () => {
             {/* social login */}
             <div className="flex justify-center flex-wrap gap-x-8 gap-y-3 mt-8 mb-16">
               <button 
-              onClick={googleSignUP} 
+              onClick={handleGoogleSignUP} 
               className="btn flex items-center">
                 <img className="w-12 " src="google.png" alt="" />
                 <p>Sign Up With Google</p>

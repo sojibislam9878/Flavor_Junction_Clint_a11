@@ -21,7 +21,7 @@ const FoodPurchase = () => {
       })
     },[id])
 
-    const { food_name, price, quantity ,photo_url, made_by,email} = singleFood || {}
+    const {_id, food_name, price, quantity ,photo_url, made_by,email} = singleFood || {}
     console.log(photo_url);
 
     if (quantity == 0) { Swal.fire({
@@ -60,7 +60,7 @@ const handlePurchase = e => {
   console.log(purchaseFoodData);
   e.target.reset()
 
-  fetch("https://assignment11-chi.vercel.app/purchaseFoods", {
+  fetch(`https://assignment11-chi.vercel.app/purchaseFoods?id=${_id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
