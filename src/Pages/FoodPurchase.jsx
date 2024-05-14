@@ -11,7 +11,7 @@ const FoodPurchase = () => {
 
     const {id}=useParams()
     const [singleFood, setSingleFood]=useState({})
-
+    const [reload , setReload]= useState(true)
     useEffect(()=>{
       fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
       .then(res=>res.json())
@@ -19,7 +19,9 @@ const FoodPurchase = () => {
         setSingleFood(data)
         console.log(data);
       })
-    },[id])
+    },[id, reload])
+
+  
 
     const {_id, food_name, price, quantity ,photo_url, made_by,email} = singleFood || {}
     console.log(photo_url);
@@ -32,6 +34,7 @@ const FoodPurchase = () => {
     }
     const date = new Date().toLocaleDateString('en-GB')
     console.log(date);
+
 
     
 
@@ -48,6 +51,8 @@ const handlePurchase = e => {
   const price =e.target.price.value
   const quantitys =e.target.quantity.value
 
+  console.log(quantity, quantitys);
+
   const purchaseFood = {foodName, price, quantitys}
   const purchaseFoodData = {...purchaseFood, buyerEmail:user?.email, buyerName:displayName , photo_url, made_by , date}
   if (quantitys>quantity) {
@@ -60,7 +65,7 @@ const handlePurchase = e => {
   console.log(purchaseFoodData);
   e.target.reset()
 
-  fetch(`https://assignment11-chi.vercel.app/purchaseFoods?id=${_id}`, {
+  fetch(`https://assignment11-chi.vercel.app/purchaseFoods?id=${_id}&quantitys=${quantitys}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,6 +83,7 @@ const handlePurchase = e => {
               timer: 1500
             });
             e.target.reset()
+            setReload(!reload)
         }
       });
 

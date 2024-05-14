@@ -30,7 +30,7 @@ const AllFoods = () => {
 
   useEffect(() => {
     fetch(
-      `https://assignment11-chi.vercel.app/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
+      `http://localhost:3000/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +40,7 @@ const AllFoods = () => {
   }, [currentPage, cardPerPage, filter , sort, search]);
 
   useEffect(() => {
-    fetch(`https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`)
+    fetch(`http://localhost:3000/allFoodsCont?filter=${filter}&search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setDataCount(data.count);
