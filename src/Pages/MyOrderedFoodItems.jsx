@@ -10,7 +10,7 @@ const MyOrderedFoodItems = () => {
     const [data, setData]=useState([])
     const [loading , setloading]= useState(true)
     useEffect(()=>{
-        fetch(`https://assignment11-chi.vercel.app/purchaseFoods/${user?.email}`)
+        fetch(`https://assignment11-chi.vercel.app/purchaseFoods/${user?.email}`,{credentials:"include"})
         .then(res=>res.json())
         .then(data=>{
             setData(data)
