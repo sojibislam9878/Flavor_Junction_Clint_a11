@@ -30,10 +30,7 @@ const TopFoodsSection = () => {
           Top Foods
         </h1>
         <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-          Discover boundless creativity in our diverse array of Art & Craft
-          categories. Unleash your imagination as you explore our curated
-          selection of painting supplies, sculpting materials, DIY kits, and
-          more
+        Indulge in the epitome of culinary excellence with our Top Food section. Here, we curate the finest recipes, chef secrets, and gastronomic trends to tantalize your taste buds and elevate your dining experiences.
         </p>
       </div>
       {/* top foods card */}

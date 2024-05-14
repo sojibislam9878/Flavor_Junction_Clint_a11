@@ -43,7 +43,7 @@ const Slider = () => {
                 data-aos-duration="1000"
                 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]"
               >
-                Food is every thing
+                Feast Your Senses!
               </h1>
               <p
                 data-aos="fade-down"
@@ -51,11 +51,7 @@ const Slider = () => {
                 data-aos-duration="1400"
                 className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6"
               >
-                Stone sculpture, a timeless tradition that spans continents and
-                epochs, embodies the essence of endurance and beauty. From the
-                rough-hewn quarry to the meticulous chisel strokes of the
-                sculptors hand, each piece tells a story of transformation and
-                transcendence.
+                 Flavor Junction where food is not just a necessity, but a passion. Dive into a world of tantalizing flavors, inspired recipes, and culinary delights. Join our community of food lovers and lets embark on a delicious journey together!
               </p>
               <Link to="/allfoods">
               <button
@@ -83,14 +79,10 @@ const Slider = () => {
           >
             <div className="container mx-auto md:p-4 text-white mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
-                I love food very much
+              Flavor Junction Where Flavor Takes Center Stage
               </h1>
               <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">
-                Clay sculpture, an ancient and revered art form, holds within it
-                the power to captivate, inspire, and evoke profound emotions.
-                From the moment the artists hands touch the malleable clay, a
-                journey of creation begins. With each deliberate movement, the
-                sculptor breathes life into the formless mass.
+              Savor the flavors of culinary excellence. Dive into a delicious universe where recipes, tips, and culinary adventures await. Whether you are a seasoned chef or a novice cook, our platform is your go-to destination for all things food.
               </p>
               <Link to="/allfoods">
               <button
@@ -118,15 +110,10 @@ const Slider = () => {
           >
             <div className="container mx-auto md:p-4 text-white mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
-                I want to eat some food
+              Taste the Difference!
               </h1>
               <p className="opacity-80 md:leading-7 lg:mt-12 mt-6 lg:leading-8 lg:w-4/6">
-                Wood carving is a time-honored craft that transforms a simple
-                piece of wood into a work of art through the skillful
-                manipulation of knives, chisels, and gouges. This ancient
-                technique has been practiced across cultures and civilizations,
-                yielding intricate sculptures, ornate furniture, and decorative
-                objects that showcase the beauty and versatility of wood.
+              Step into a culinary wonderland at us. Explore mouthwatering recipes, expert cooking tips, and a community dedicated to the art of gastronomy. Join us and lets elevate your dining experience to new heights!
               </p>
               <Link to="/allfoods">
               <button
