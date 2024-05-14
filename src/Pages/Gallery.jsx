@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Spinner from "../Components/Spinner";
+import galleryphoto from "../assets/images/gallery.png"
 
 const Gallery = () => {
   const { user } = useAuth();
@@ -58,11 +59,17 @@ if (loading) {
   return <Spinner></Spinner>
 }
   return (
-    <div>
+    <div  className=' md:mb-36 mb-8'>
        <Helmet>
-        <title>Food Junction | Gallery</title>
+        <title>Flavor Junction | Gallery</title>
       </Helmet>
-        <div className="bg-[#EA6A12] py-6 text-center">
+        <div style={{
+              backgroundImage:
+              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${galleryphoto})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }} className="text-center py-6 md:my-16">
         <h1 className="font-extrabold text-4xl text-white">Gallery</h1>
       </div>
       <div className="container mx-auto p-4">

@@ -45,7 +45,7 @@ console.log(locations);
     return (
         <div className=" bg-[#FAF9F5]">
            <Helmet>
-        <title>Food Junction | Login</title>
+        <title>Flavor Junction | Login</title>
       </Helmet>
         <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
           <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">

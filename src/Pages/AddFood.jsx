@@ -41,13 +41,13 @@ const AddFood = () => {
       });
   };
   return (
-    <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+    <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-[#FAF9F5] md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <Helmet>
-        <title>Food Junction | Add Foods</title>
+        <title>Flavor Junction | Add Foods</title>
       </Helmet>
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6">Add a new food</h1>
+        <h1 className="text-4xl font-extrabold mt-6">Add new food</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
@@ -57,7 +57,7 @@ const AddFood = () => {
               type="text"
               placeholder="Food Name"
               {...register("food_name", { required: true })}
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.food_name && (
               <span className="text-red-600">Enter food name</span>
@@ -69,7 +69,7 @@ const AddFood = () => {
               type="text"
               placeholder="Photo URL"
               {...register("photo_url", { required: true })}
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.photo_url && (
               <span className="text-red-600">Give a Photo URL</span>
@@ -81,7 +81,7 @@ const AddFood = () => {
               type="text"
               placeholder="Food Category "
               {...register("food_category", { required: true })}
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.food_category && (
               <span className="text-red-600">Write Food Category</span>
@@ -93,7 +93,7 @@ const AddFood = () => {
               type="text"
               placeholder="Quantity"
               {...register("quantity", { required: true })}
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.quantity && (
               <span className="text-red-600">Give Quantity</span>
@@ -106,7 +106,7 @@ const AddFood = () => {
               type="text"
               placeholder="Price"
               {...register("price", { required: true })}
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.price && <span className="text-red-600">Enter price</span>}
           </div>
@@ -116,7 +116,7 @@ const AddFood = () => {
               type="text"
               {...register("food_origin", { required: true })}
               placeholder="Food Origin"
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
             {errors.food_origin && (
               <span className="text-red-600">What is the origin</span>
@@ -129,7 +129,7 @@ const AddFood = () => {
               type="text"
               defaultValue={email}
               readOnly
-              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
           <div className="mt-4 md:mt-0">
@@ -138,7 +138,7 @@ const AddFood = () => {
               type="text"
               defaultValue={displayName}
               readOnly
-              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
         </div>
@@ -148,7 +148,7 @@ const AddFood = () => {
             type="text"
             placeholder="Short Description"
             {...register("description", { required: true })}
-            className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+            className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
           />
           {errors.description && (
             <span className="text-red-600">Write a short description</span>
@@ -157,7 +157,7 @@ const AddFood = () => {
         <input
           type="submit"
           value="Add"
-          className="border w-full btn mt-6 text-lg font-bold"
+          className="border w-full bg-[#EA6A12]  hover:bg-[#C75A0F] text-white btn mt-6 text-lg font-bold"
         />
       </form>
     </div>

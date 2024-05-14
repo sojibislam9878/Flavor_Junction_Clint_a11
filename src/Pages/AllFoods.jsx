@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AllFoodCard from "../Components/AllFoodCard";
 import { Helmet } from "react-helmet";
 import Spinner from "../Components/Spinner";
+import allfoodsphoto from "../assets/images/allfoods.png"
 
 const AllFoods = () => {
   const [allFoodCards, setAllFoodCards] = useState([]);
@@ -83,15 +84,21 @@ const AllFoods = () => {
     <div>
       {/* section header  */}
       <Helmet>
-        <title>Food Junction | ALL Foods</title>
+        <title>Flavor Junction | ALL Foods</title>
       </Helmet>
-      <div className="bg-[#EA6A12] py-6 text-center">
+      <div style={{
+              backgroundImage:
+              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${allfoodsphoto})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }} className=" py-6 text-center md:my-16">
         <h1 className="font-extrabold text-4xl text-white">All Foods</h1>
       </div>
       {/* scetion body  */}
       <div className="container mx-auto p-4">
         <div>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
+          <div className="flex flex-col md:flex-row justify-center items-center md:gap-5 gap-2">
             <div>
               <select
               onChange={(e)=>setFilter(e.target.value)}
@@ -143,7 +150,7 @@ const AllFoods = () => {
                 <option value="low">Low to High</option>
               </select>
             </div>
-            <button onClick={handleReset} className="btn">Reset</button>
+            <button onClick={handleReset} className="btn bg-green-300 hover:bg-green-600">Reset</button>
           </div>
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           </div>
@@ -179,7 +186,7 @@ const AllFoods = () => {
             <AllFoodCard key={food._id} food={food}></AllFoodCard>
           ))}
         </div>
-        <div>
+        <div className="md:mb-36  mb-8">
           <div className="flex justify-center mt-12">
             <button
               onClick={handlePrevioustBtn}

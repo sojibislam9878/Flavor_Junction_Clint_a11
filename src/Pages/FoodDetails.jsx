@@ -30,7 +30,7 @@ const FoodDetails = () => {
     return (
         <div className="container mx-auto p-4">
            <Helmet>
-        <title>{`Food Junction | Details of ${food_name}`}</title>
+        <title>{`Flavor Junction | Details of ${food_name}`}</title>
       </Helmet>
             <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 md:mb-28 mb-12">
       

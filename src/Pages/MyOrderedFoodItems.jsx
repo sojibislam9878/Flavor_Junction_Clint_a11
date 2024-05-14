@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import MyOrderCard from "../Components/MyOrderCard";
 import { Helmet } from "react-helmet";
 import Spinner from "../Components/Spinner";
+import NoData from "../Components/NoData";
 
 const MyOrderedFoodItems = () => {
     const {user}=useAuth()
@@ -20,10 +21,14 @@ const MyOrderedFoodItems = () => {
     if (loading) {
         return <Spinner></Spinner>
     }
+    if (data.length === 0) {
+        return <NoData></NoData>
+    }
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 mb-8 md:mb-36">
+            <h1 className="text-4xl mt-4 font-bold">My ordered foods :</h1>
             <Helmet>
-        <title>Food Junction | My Ordered Foods</title>
+        <title>Flavor Junction | My Ordered Foods</title>
       </Helmet>
             <div  className="grid lg:grid-cols-3 gap-6 mt-14">
                 {

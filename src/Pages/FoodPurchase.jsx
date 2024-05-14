@@ -86,10 +86,10 @@ const handlePurchase = e => {
 
     
     return (
-        <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+        <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-[#FAF9F5] md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <Helmet>
-        <title>{`Food Junction | Purchase ${food_name}`}</title>
+        <title>{`Flavor Junction | Purchase ${food_name}`}</title>
       </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Place your Order</h1>
@@ -106,7 +106,7 @@ const handlePurchase = e => {
               defaultValue={food_name}
               required
               name="foodName" 
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
           <div className="mt-4 md:mt-0">
@@ -117,7 +117,7 @@ const handlePurchase = e => {
               required
               placeholder="Price"
               name="price"
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
           <div className="mt-4 md:mt-0">
@@ -128,12 +128,12 @@ const handlePurchase = e => {
               defaultValue={1}
               required
               name="quantity"
-              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
           {/* <div className="mt-4 md:mt-0 border">
             <p className="font-bold opacity-70">Buying Date:</p>
-            <div className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100 border">
+            <div className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white border">
             <DatePicker name="date" className=" focus:outline-none" selected={startDate} onChange={(date) => setStartDate(date)} />
             </div>
           </div> */}
@@ -143,7 +143,7 @@ const handlePurchase = e => {
               type="text"
               defaultValue={user?.email}
               readOnly
-              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
           <div className="mt-4 md:mt-0">
@@ -152,7 +152,7 @@ const handlePurchase = e => {
               type="text"
               defaultValue={user?.displayName}
               readOnly
-              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-white"
             />
           </div>
         </div>
@@ -160,7 +160,7 @@ const handlePurchase = e => {
           type="submit"
           value="Purchase"
           disabled={quantity<=0?true:false}
-          className={`border w-full btn mt-6 text-lg font-bold`}
+          className={`border w-full btn mt-6 text-lg font-bold bg-[#EA6A12]  hover:bg-[#C75A0F] text-white`}
         />
       </form>
     </div>

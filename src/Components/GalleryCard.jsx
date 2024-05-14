@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 const GalleryCard = ({data}) => {
     const {displayName, Feedback , PhotoURL}=data ||{}
     return (
-      <div className="card card-compact bg-base-200 shadow-xl h-full overflow-hidden group ">
+        <div className="card card-compact bg-base-200 shadow-xl h-full overflow-hidden group">
         <div className="">
           <figure className="relativ overflow-hidden">
             <img src={PhotoURL}alt="Shoes" className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover" />

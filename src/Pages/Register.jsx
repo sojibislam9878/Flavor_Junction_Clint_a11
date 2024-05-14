@@ -44,7 +44,7 @@ const Register = () => {
     return (
         <div className="flex justify-center p-4 pt-10 pb-16 bg-[#FAF9F5]">
            <Helmet>
-        <title>Food Junction | Register</title>
+        <title>Flavor Junction | Register</title>
       </Helmet>
       
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
