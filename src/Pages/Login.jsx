@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 //     const Locations = useLocation();
@@ -35,6 +36,9 @@ const Login = () => {
 
     return (
         <div className=" bg-[#FAF9F5]">
+           <Helmet>
+        <title>Food Junction | Login</title>
+      </Helmet>
         <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
           <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
             <form onSubmit={handleSubmit(onSubmit)}>

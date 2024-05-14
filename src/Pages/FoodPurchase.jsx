@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const FoodPurchase = () => {
   const {user}= useAuth()
@@ -87,6 +88,9 @@ const handlePurchase = e => {
     return (
         <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
+      <Helmet>
+        <title>{`Food Junction | Purchase ${food_name}`}</title>
+      </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Place your Order</h1>
       </div>

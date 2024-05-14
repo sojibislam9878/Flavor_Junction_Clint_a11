@@ -13,7 +13,7 @@ import MyAddedFoods from "../Pages/MyAddedFoods";
 import UpdateCard from "../Components/UpdateCard";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import MyOrderedFoodItems from "../Pages/MyOrderedFoodItems";
-import LoadingSpinner from "../Components/LoadingSpinner";
+import Spinner from "../Components/Spinner";
 
 export const router = createBrowserRouter([
     {
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/update/:id",
-          element:<UpdateCard></UpdateCard>,
+          element:<PrivetRoute><UpdateCard></UpdateCard></PrivetRoute>,
         },
         {
           path:"/myorder",
@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
         },
         {
           path:"/myorderrr",
-          element:<LoadingSpinner></LoadingSpinner>,
+          element:<Spinner></Spinner>,
         },
       ]
     },

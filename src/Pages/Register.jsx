@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -42,6 +43,9 @@ const Register = () => {
     };
     return (
         <div className="flex justify-center p-4 pt-10 pb-16 bg-[#FAF9F5]">
+           <Helmet>
+        <title>Food Junction | Register</title>
+      </Helmet>
       
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-[#FAF9F5]">
         <form onSubmit={handleSubmit(onSubmit)}>

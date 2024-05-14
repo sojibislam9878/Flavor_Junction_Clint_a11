@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddFood = () => {
   const { user } = useAuth();
@@ -42,6 +43,9 @@ const AddFood = () => {
   return (
     <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
+      <Helmet>
+        <title>Food Junction | Add Foods</title>
+      </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Add a new food</h1>
       </div>

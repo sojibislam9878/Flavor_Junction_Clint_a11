@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import AllFoodCard from "../Components/AllFoodCard";
+import { Helmet } from "react-helmet";
+import Spinner from "../Components/Spinner";
 
 const AllFoods = () => {
   const [allFoodCards, setAllFoodCards] = useState([]);
@@ -23,6 +25,7 @@ const AllFoods = () => {
   //       setAllFoodCards(data);
   //     });
   // }, []);
+  const [loading, setloading]= useState(true)
 
   useEffect(() => {
     fetch(
@@ -31,6 +34,7 @@ const AllFoods = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllFoodCards(data);
+        setloading(false)
       });
   }, [currentPage, cardPerPage, filter , sort, search]);
 
@@ -72,9 +76,16 @@ const AllFoods = () => {
   }
 
   console.log(dataCount);
+
+  if (loading) {
+    return <Spinner></Spinner>
+  }
   return (
     <div>
       {/* section header  */}
+      <Helmet>
+        <title>Food Junction | ALL Foods</title>
+      </Helmet>
       <div className="bg-[#EA6A12] py-6 text-center">
         <h1 className="font-extrabold text-4xl text-white">All Foods</h1>
       </div>

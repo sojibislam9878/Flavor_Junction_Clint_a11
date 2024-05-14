@@ -1,9 +1,13 @@
 
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
         <div className="flex justify-center items-center h-screen">
+           <Helmet>
+        <title>404</title>
+      </Helmet>
       <div className="text-center">
         <div className="w-2/3 lg:w-2/5 mx-auto flex justify-between items-center">
           {/* <img src="0.png" alt="" /> */}

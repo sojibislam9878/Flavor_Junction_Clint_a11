@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "../Components/Spinner";
 
 const FoodDetails = () => {
     const {id} =useParams()
     const [singleFood, setSingleFood]=useState({})
+    const [loading , setloading]= useState(true)
 
     useEffect(()=>{
       fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
@@ -11,6 +14,7 @@ const FoodDetails = () => {
       .then(data=>{
         console.log(data);
         setSingleFood(data)
+        setloading(false)
       })
     },[id])
 
@@ -18,8 +22,16 @@ const FoodDetails = () => {
       food_origin , photo_url, quantity} = singleFood || {}
 
 
+      if (loading) {
+        return <Spinner></Spinner>
+      }
+
+
     return (
         <div className="container mx-auto p-4">
+           <Helmet>
+        <title>{`Food Junction | Details of ${food_name}`}</title>
+      </Helmet>
             <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 md:mb-28 mb-12">
       
       <div className=" lg:w-1/3 flex justify-center items-center">

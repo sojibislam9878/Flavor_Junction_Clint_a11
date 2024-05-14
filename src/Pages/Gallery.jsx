@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import GalleryCard from "../Components/GalleryCard";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import Spinner from "../Components/Spinner";
 
 const Gallery = () => {
   const { user } = useAuth();
   const {displayName}=user || {}
   const [galleryData, setGalleryData]=useState([])
+  const [loading , setloading]=useState(true)
   const {
     register,
     handleSubmit,
@@ -47,11 +50,18 @@ const Gallery = () => {
     .then(res=>res.json())
     .then(data=>{
         setGalleryData(data)
+        setloading(false)
     })
   },[])
 console.log(galleryData);
+if (loading) {
+  return <Spinner></Spinner>
+}
   return (
     <div>
+       <Helmet>
+        <title>Food Junction | Gallery</title>
+      </Helmet>
         <div className="bg-[#EA6A12] py-6 text-center">
         <h1 className="font-extrabold text-4xl text-white">Gallery</h1>
       </div>
