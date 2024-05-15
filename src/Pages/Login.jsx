@@ -10,7 +10,6 @@ import loginphoto from "../assets/images/login.png"
 const Login = () => {
     const locations = useLocation();
   const navigate = useNavigate();
-console.log(locations);
   const {
     register,
     handleSubmit,

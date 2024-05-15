@@ -20,7 +20,6 @@ const Gallery = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     const finalData = {...data, displayName}
     fetch("https://assignment11-chi.vercel.app/gallery", {
       method: "POST",
@@ -31,9 +30,7 @@ const Gallery = () => {
     })
     .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
-          console.log("succes");
           reset();
           Swal.fire({
             position: "top-end",
@@ -54,7 +51,6 @@ const Gallery = () => {
         setloading(false)
     })
   },[])
-console.log(galleryData);
 if (loading) {
   return <Spinner></Spinner>
 }

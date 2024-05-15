@@ -10,7 +10,6 @@ const ErrorPage = () => {
       </Helmet>
       <div className="text-center">
         <div className="w-2/3 lg:w-2/5 mx-auto flex justify-between items-center">
-          {/* <img src="0.png" alt="" /> */}
           <div className='flex-1'>
             <img src="4.png" alt="" />
           </div>

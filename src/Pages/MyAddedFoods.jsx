@@ -8,8 +8,6 @@ import NoData from "../Components/NoData";
 const MyAddedFoods = () => {
 const {user} = useAuth()
 const {email} =user || {}
-
-console.log(email);
 const [loading , setloading]= useState(true)
 
     const [myAddedFoods, setMyAddedFoods]=useState([])

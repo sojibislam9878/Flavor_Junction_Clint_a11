@@ -7,7 +7,7 @@ const UpdateCard = () => {
     const {id} = useParams()
     const [updateCard, setUpdateCard]=useState({})
     const {food_name , description, photo_url,food_category, quantity , price, food_origin }=updateCard
-    console.log(food_name);
+
     const {
         register,
         handleSubmit,
@@ -19,13 +19,11 @@ const UpdateCard = () => {
         fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
             setUpdateCard(data)
         })
     }, [id])
 
     const onSubmit=data=>{
-        console.log(data);
         fetch(`https://assignment11-chi.vercel.app/updateCard/${id}`, {
       method: "PUT",
       headers: {
@@ -35,7 +33,6 @@ const UpdateCard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount) {
           Swal.fire({
             position: "center",

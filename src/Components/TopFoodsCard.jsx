@@ -7,7 +7,6 @@ const TopFoodsCard = ({food}) => {
 
     const slicedOldPrice = parseFloat(oldPrice.toString().slice(0,5))
 
-    console.log(slicedOldPrice);
   return (
     <div>
       <div className="card card-compact bg-base-100 shadow-xl  h-full">

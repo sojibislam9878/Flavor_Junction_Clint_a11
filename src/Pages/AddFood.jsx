@@ -28,7 +28,6 @@ const AddFood = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-            console.log("hello");
             Swal.fire({
               position: "center",
               icon: "success",

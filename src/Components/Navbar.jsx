@@ -3,7 +3,6 @@ import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  console.log(user);
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
   const activeLink = `bg-gradient-to-r from-[#EA6A12] to-[#EA6A12] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
   return (

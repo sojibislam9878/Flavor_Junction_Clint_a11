@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 import Swal from 'sweetalert2';
 
 const MyOrderCard = ({card , reload , setReload}) => {
@@ -6,7 +7,6 @@ const MyOrderCard = ({card , reload , setReload}) => {
     }= card || {}
 
     const handleDelete=_id=>{
-        console.log('delete', _id);
 
         Swal.fire({
           title: "Are you sure?",
@@ -23,7 +23,6 @@ const MyOrderCard = ({card , reload , setReload}) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount) {
               setReload(!reload)
               Swal.fire({
@@ -79,7 +78,7 @@ const MyOrderCard = ({card , reload , setReload}) => {
                 onClick={() => handleDelete(_id)}
                 className="btn w-full bg-red-500 text-white hover:bg-red-700 mt-2"
               >
-                {/* <RiDeleteBin2Fill className="text-xl" /> */}
+                <RiDeleteBin2Fill className="text-xl" />
                  Delete
               </button>
             </div>

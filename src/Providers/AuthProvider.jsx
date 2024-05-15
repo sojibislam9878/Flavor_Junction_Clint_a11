@@ -70,13 +70,6 @@ const AuthProvider = ({ children }) => {
       displayName: name,
       photoURL: photo,
     });
-    // .then(() => {
-    // Profile updated!
-    // ...
-    // }).catch((error) => {
-    // An error occurred
-    // ...
-    // });
   };
    //   user
    const [user, setUser] = useState(null);
@@ -88,7 +81,6 @@ const AuthProvider = ({ children }) => {
       const userEmail = currentUser?.email || user?.email
       const logingUser = {email: userEmail}
       setUser(currentUser)
-      console.log(currentUser);
 
        if (currentUser) {
          axios.post("https://assignment11-chi.vercel.app/jwt",logingUser, {withCredentials : true})

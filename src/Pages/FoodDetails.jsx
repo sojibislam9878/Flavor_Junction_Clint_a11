@@ -12,7 +12,6 @@ const FoodDetails = () => {
       fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
       .then(res=>res.json())
       .then(data=>{
-        console.log(data);
         setSingleFood(data)
         setloading(false)
       })

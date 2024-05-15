@@ -17,14 +17,13 @@ const FoodPurchase = () => {
       .then(res=>res.json())
       .then(data=>{
         setSingleFood(data)
-        console.log(data);
       })
     },[id, reload])
 
   
 
     const {_id, food_name, price, quantity ,photo_url, made_by,email} = singleFood || {}
-    console.log(photo_url);
+
 
     if (quantity == 0) { Swal.fire({
         icon: "error",
@@ -33,7 +32,6 @@ const FoodPurchase = () => {
       });
     }
     const date = new Date().toLocaleDateString('en-GB')
-    console.log(date);
 
 
     
@@ -51,8 +49,6 @@ const handlePurchase = e => {
   const price =e.target.price.value
   const quantitys =e.target.quantity.value
 
-  console.log(quantity, quantitys);
-
   const purchaseFood = {foodName, price, quantitys}
   const purchaseFoodData = {...purchaseFood, buyerEmail:user?.email, buyerName:displayName , photo_url, made_by , date}
   if (quantitys>quantity) {
@@ -62,7 +58,6 @@ const handlePurchase = e => {
       text: `available quantity is ${quantity}. You can not buy more than this`,
     })
   }
-  console.log(purchaseFoodData);
   e.target.reset()
 
   fetch(`https://assignment11-chi.vercel.app/purchaseFoods?id=${_id}&quantitys=${quantitys}`, {

@@ -8,7 +8,6 @@ const PrivetRoute = ({ children }) => {
 
   if (loading) {
     return <Spinner></Spinner>
-    // return <h1>hello</h1>;
   }
   if (user) {
     return <div>{children}</div>;

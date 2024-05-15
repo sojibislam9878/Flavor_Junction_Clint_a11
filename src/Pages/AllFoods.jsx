@@ -14,23 +14,13 @@ const AllFoods = () => {
   const [serchText , setSearchText] = useState("")
   const totalPage = Math.ceil(dataCount / cardPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(sort);
   const pages = [...Array(totalPage).keys()].map((i) => i + 1);
 
-  // useEffect(()=>{
-  //   fetch(
-  //     `https://assignment11-chi.vercel.app/allFoodsForPaginations`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setAllFoodCards(data);
-  //     });
-  // }, []);
   const [loading, setloading]= useState(true)
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
+      `https://assignment11-chi.vercel.app/allFoodsForPagination?page=${currentPage}&size=${cardPerPage}&filter=${filter}&sort=${sort}&search=${search}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +30,7 @@ const AllFoods = () => {
   }, [currentPage, cardPerPage, filter , sort, search]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/allFoodsCont?filter=${filter}&search=${search}`)
+    fetch(`https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setDataCount(data.count);
@@ -54,7 +44,6 @@ const AllFoods = () => {
   }
 
   const handleCurrentPage = (val) => {
-    console.log(val);
     setCurrentPage(val);
   };
 
@@ -74,8 +63,6 @@ const AllFoods = () => {
     setSort("")
     setSearchText("")
   }
-
-  console.log(dataCount);
 
   if (loading) {
     return <Spinner></Spinner>

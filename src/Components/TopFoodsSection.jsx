@@ -10,18 +10,14 @@ const TopFoodsSection = () => {
         .then(res=>res.json())
         .then(data=>{
             const sixFoods = data.slice(0, 6)
-            console.log(sixFoods);
 
             const sortFoods = sixFoods.sort(
                 (a, b) => b.purchase_count - a.purchase_count
               );
-
-              console.log(sortFoods);
               setFoods(sortFoods)
         })
     },[])
 
-    console.log(foods);
   return (
     <div className="mt-8 lg:mt-36 md:mt-28 md:py-8 container mx-auto p-4">
         {/* section header */}
