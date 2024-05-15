@@ -1,11 +1,18 @@
 
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import footerphoto from  "../assets/images/footer.jpg"
 
 const Footer = () => {
     return (
         <div>
-      <div className="bg-gray-600 text-white">
+      <div style={{
+              backgroundImage:
+              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${footerphoto})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }} className="bg-gray-600 text-white">
         <div className="container mx-auto p-4 ">
           <div className="md:flex justify-between flex-wrap gap-5 pb-16 border-b-2 border-gray-400 border-opacity-70">
             <div className="mt-8 ">
