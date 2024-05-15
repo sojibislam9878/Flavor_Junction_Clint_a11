@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const MyAddedCard = ({card }) => {
-    const {food_name , price , food_origin, purchase_count , quantity , _id ,photo_url
-    }= card || {}
+const MyAddedCard = ({ card }) => {
+  const {
+    food_name,
+    price,
+    food_origin,
+    purchase_count,
+    quantity,
+    _id,
+    photo_url,
+  } = card || {};
 
-
-   
-    return (
-        <div>
+  return (
+    <div>
       <div className="card card-compact bg-base-100 shadow-xl h-full">
         <figure>
           <img
@@ -25,7 +30,7 @@ const MyAddedCard = ({card }) => {
           <div className="flex">
             <p className="text-lg font-medium opacity-70">{price} $</p>
             <p className="text-lg font-medium opacity-70 flex items-center gap-2">
-              {food_origin} 
+              {food_origin}
             </p>
           </div>
           <div className="">
@@ -49,11 +54,11 @@ const MyAddedCard = ({card }) => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 MyAddedCard.propTypes = {
-    card: PropTypes.object,
-    reload:PropTypes.bool,
-    setReload: PropTypes.func
-  };
+  card: PropTypes.object,
+  reload: PropTypes.bool,
+  setReload: PropTypes.func,
+};
 export default MyAddedCard;

@@ -30,36 +30,36 @@ const Navbar = () => {
               tabIndex={0}
               className=" menu menu-sm dropdown-content mt-3 z-[11] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/allfoods"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                All Foods
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/gallery"
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
-              >
-                Gallery
-              </NavLink>
-            </li>
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/allfoods"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  All Foods
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/gallery"
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  Gallery
+                </NavLink>
+              </li>
               {user ? (
                 <li className="md:hidden">
                   <button
@@ -133,7 +133,9 @@ const Navbar = () => {
                   <div className="w-30 rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
-                      src={user.photoURL || "https://i.ibb.co/4SrK9pD/profile.jpg"}
+                      src={
+                        user.photoURL || "https://i.ibb.co/4SrK9pD/profile.jpg"
+                      }
                     />
                   </div>
                 </div>
@@ -142,12 +144,10 @@ const Navbar = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <Link to="/myaddedfoods">
-                      My added food Items
-                    </Link>
+                    <Link to="/myaddedfoods">My added food Items</Link>
                   </li>
                   <li>
-                   <Link to="/addfood">Add a food item</Link>
+                    <Link to="/addfood">Add a food item</Link>
                   </li>
                   <li>
                     <Link to="/myorder">My ordered Food Items</Link>

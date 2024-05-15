@@ -4,20 +4,18 @@ import ContactUs from "../Components/ContactUs";
 import Slider from "../Components/Slider";
 import TopFoodsSection from "../Components/TopFoodsSection";
 
-
 const Home = () => {
-    return (
-        <div>
-             <Helmet>
+  return (
+    <div>
+      <Helmet>
         <title>Flavor Junction</title>
       </Helmet>
-           <Slider></Slider>
-           <TopFoodsSection></TopFoodsSection>
-           <AboutUs></AboutUs>
-           <ContactUs></ContactUs>
-           
-        </div>
-    );
+      <Slider></Slider>
+      <TopFoodsSection></TopFoodsSection>
+      <AboutUs></AboutUs>
+      <ContactUs></ContactUs>
+    </div>
+  );
 };
 
 export default Home;

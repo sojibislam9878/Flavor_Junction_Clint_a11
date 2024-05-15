@@ -4,56 +4,57 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
-import registerPhoto from "../assets/images/register.jpg"
+import registerPhoto from "../assets/images/register.jpg";
 
 const Register = () => {
-    const navigate = useNavigate();
-    const Locations = useLocation();
-    const form = Locations?.state || "/";
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm();
-  
-    const [isHide, setIsHide] = useState(false);
-    const handleHide = () => {
-      setIsHide(!isHide);
-    };
-    const { createUserWithEmail, updateUser} = useAuth();
-  
-    // create profile and update user
-    const onSubmit = (data) => {
-      const { email, password, name, photo } = data;
-      createUserWithEmail(email, password, toast).then(() => {
-        updateUser(name, photo);
-        fetch("https://assignment11-chi.vercel.app/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-        navigate(form);
-        
-      });
-    };
-    return (
-        <div style={{
-          backgroundImage:
-          `linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(${registerPhoto})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }} className="flex justify-center p-4 pt-10 pb-16 text-white">
-           <Helmet>
+  const navigate = useNavigate();
+  const Locations = useLocation();
+  const form = Locations?.state || "/";
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [isHide, setIsHide] = useState(false);
+  const handleHide = () => {
+    setIsHide(!isHide);
+  };
+  const { createUserWithEmail, updateUser } = useAuth();
+
+  // create profile and update user
+  const onSubmit = (data) => {
+    const { email, password, name, photo } = data;
+    createUserWithEmail(email, password, toast).then(() => {
+      updateUser(name, photo);
+      fetch("https://assignment11-chi.vercel.app/users", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+      navigate(form);
+    });
+  };
+  return (
+    <div
+      style={{
+        backgroundImage: `linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(${registerPhoto})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+      className="flex justify-center p-4 pt-10 pb-16 text-white"
+    >
+      <Helmet>
         <title>Flavor Junction | Register</title>
       </Helmet>
-      
+
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl backdrop-blur-md">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
@@ -74,21 +75,21 @@ const Register = () => {
             <span className="text-red-600">Enter Your Full Name</span>
           )}
           <div className="flex justify-center items-center gap-2 border-b-2">
-          <span className="material-symbols-outlined mt-6 text-2xl">
-                alternate_email
-              </span>
-          <input
-          type="email"
-            placeholder="Your Email"
-            {...register("email", { required: true })}
-            className="w-full py-4  outline-none mt-6 bg-transparent placeholder:text-white "
-          />
+            <span className="material-symbols-outlined mt-6 text-2xl">
+              alternate_email
+            </span>
+            <input
+              type="email"
+              placeholder="Your Email"
+              {...register("email", { required: true })}
+              className="w-full py-4  outline-none mt-6 bg-transparent placeholder:text-white "
+            />
           </div>
           {errors.email && <span className="text-red-600">Enter Email</span>}
           <div className="flex justify-center items-center gap-2 border-b-2">
             <span className="material-symbols-outlined mt-6">image</span>
             <input
-            type="url"
+              type="url"
               placeholder="Your Photo URL"
               {...register("photo", { required: true })}
               className="w-full py-4  outline-none mt-6 bg-transparent placeholder:text-white "
@@ -98,14 +99,16 @@ const Register = () => {
             <span className="text-red-600">Give Your Photo URL</span>
           )}
           <div className="relative">
-            <div  className="flex justify-center items-center gap-2 border-b-2">
-            <span className="material-symbols-outlined mt-6 text-2xl">lock</span>
-            <input
-              type={isHide ? "text" : "password"}
-              placeholder="Your Password"
-              {...register("password", { required: true })}
-              className="w-full py-4 outline-none mt-6 bg-transparent placeholder:text-white "
-            />
+            <div className="flex justify-center items-center gap-2 border-b-2">
+              <span className="material-symbols-outlined mt-6 text-2xl">
+                lock
+              </span>
+              <input
+                type={isHide ? "text" : "password"}
+                placeholder="Your Password"
+                {...register("password", { required: true })}
+                className="w-full py-4 outline-none mt-6 bg-transparent placeholder:text-white "
+              />
             </div>
             <p
               className="absolute right-5 top-11 hover:cursor-pointer"
@@ -136,9 +139,9 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
-    );
+  );
 };
 
 export default Register;

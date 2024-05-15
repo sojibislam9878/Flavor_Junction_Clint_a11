@@ -1,22 +1,21 @@
-
-import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
-    return (
-        <div className="flex justify-center items-center h-screen">
-           <Helmet>
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Helmet>
         <title>404</title>
       </Helmet>
       <div className="text-center">
         <div className="w-2/3 lg:w-2/5 mx-auto flex justify-between items-center">
-          <div className='flex-1'>
+          <div className="flex-1">
             <img src="4.png" alt="" />
           </div>
-          <div className='flex-1'>
+          <div className="flex-1">
             <img src="0.png" alt="" />
           </div>
-          <div className='flex-1'>
+          <div className="flex-1">
             <img src="4.png" alt="" />
           </div>
         </div>
@@ -29,7 +28,7 @@ const ErrorPage = () => {
         </Link>
       </div>
     </div>
-    );
+  );
 };
 
 export default ErrorPage;

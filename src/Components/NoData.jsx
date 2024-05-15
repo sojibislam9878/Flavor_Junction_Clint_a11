@@ -1,9 +1,8 @@
-
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 const NoData = () => {
-    return (
-            <div className="bg-red-200 mt-24 w-5/6 mx-auto mb-28 ">
+  return (
+    <div className="bg-red-200 mt-24 w-5/6 mx-auto mb-28 ">
       <Helmet>
         <title>Flavor Junction || No data</title>
       </Helmet>
@@ -13,7 +12,7 @@ const NoData = () => {
         </h1>
       </div>
     </div>
-    );
+  );
 };
 
 export default NoData;

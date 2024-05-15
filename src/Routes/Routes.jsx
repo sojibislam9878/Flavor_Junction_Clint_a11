@@ -16,59 +16,83 @@ import MyOrderedFoodItems from "../Pages/MyOrderedFoodItems";
 import Spinner from "../Components/Spinner";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-          index:true,
-          element:<Home></Home>,
-        },
-        {
-          path:"/allfoods",
-          element:<AllFoods></AllFoods>,
-        },
-        {
-          path:"/gallery",
-          element:<Gallery></Gallery>,
-        },
-        {
-          path:"/login",
-          element:<Login></Login>,
-        },
-        {
-          path:"/register",
-          element:<Register></Register>,
-        },
-        {
-          path:"/details/:id",
-          element:<PrivetRoute><FoodDetails></FoodDetails></PrivetRoute>,
-        },
-        {
-          path:"/foodpurchase/:id",
-          element:<PrivetRoute><FoodPurchase></FoodPurchase></PrivetRoute>,
-        },
-        {
-          path:"/addfood",
-          element:<PrivetRoute><AddFood></AddFood></PrivetRoute>,
-        },
-        {
-          path:"/myaddedfoods",
-          element:<PrivetRoute><MyAddedFoods></MyAddedFoods></PrivetRoute>,
-        },
-        {
-          path:"/update/:id",
-          element:<PrivetRoute><UpdateCard></UpdateCard></PrivetRoute>,
-        },
-        {
-          path:"/myorder",
-          element:<PrivetRoute><MyOrderedFoodItems></MyOrderedFoodItems></PrivetRoute>,
-        },
-        {
-          path:"/myorderrr",
-          element:<Spinner></Spinner>,
-        },
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>,
+      },
+      {
+        path: "/allfoods",
+        element: <AllFoods></AllFoods>,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery></Gallery>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivetRoute>
+            <FoodDetails></FoodDetails>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/foodpurchase/:id",
+        element: (
+          <PrivetRoute>
+            <FoodPurchase></FoodPurchase>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/addfood",
+        element: (
+          <PrivetRoute>
+            <AddFood></AddFood>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myaddedfoods",
+        element: (
+          <PrivetRoute>
+            <MyAddedFoods></MyAddedFoods>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivetRoute>
+            <UpdateCard></UpdateCard>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myorder",
+        element: (
+          <PrivetRoute>
+            <MyOrderedFoodItems></MyOrderedFoodItems>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myorderrr",
+        element: <Spinner></Spinner>,
+      },
+    ],
+  },
+]);

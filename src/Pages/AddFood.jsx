@@ -12,11 +12,10 @@ const AddFood = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const purchase_count = 0
+  const purchase_count = 0;
 
-  const onSubmit = (data) => { 
-
-    const fullData = {...data, email, displayName , purchase_count}
+  const onSubmit = (data) => {
+    const fullData = { ...data, email, displayName, purchase_count };
 
     fetch("https://assignment11-chi.vercel.app/allfoods", {
       method: "POST",
@@ -28,14 +27,14 @@ const AddFood = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Your food has been saved",
-              showConfirmButton: false,
-              timer: 1500
-            });
-            reset()
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your food has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          reset();
         }
       });
   };

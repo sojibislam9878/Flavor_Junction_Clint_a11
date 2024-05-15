@@ -4,27 +4,35 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateCard = () => {
-    const {id} = useParams()
-    const [updateCard, setUpdateCard]=useState({})
-    const {food_name , description, photo_url,food_category, quantity , price, food_origin }=updateCard
+  const { id } = useParams();
+  const [updateCard, setUpdateCard] = useState({});
+  const {
+    food_name,
+    description,
+    photo_url,
+    food_category,
+    quantity,
+    price,
+    food_origin,
+  } = updateCard;
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-      } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    useEffect(()=>{
-        fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
-        .then(res=>res.json())
-        .then(data=>{
-            setUpdateCard(data)
-        })
-    }, [id])
+  useEffect(() => {
+    fetch(`https://assignment11-chi.vercel.app/singleFood/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUpdateCard(data);
+      });
+  }, [id]);
 
-    const onSubmit=data=>{
-        fetch(`https://assignment11-chi.vercel.app/updateCard/${id}`, {
+  const onSubmit = (data) => {
+    fetch(`https://assignment11-chi.vercel.app/updateCard/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -39,17 +47,19 @@ const UpdateCard = () => {
             icon: "success",
             title: "Your food has been updateded",
             showConfirmButton: false,
-            timer: 2000
+            timer: 2000,
           });
           reset();
         }
       });
-    }
-    return (
-        <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+  };
+  return (
+    <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6">Update {food_name} Info</h1>
+        <h1 className="text-4xl font-extrabold mt-6">
+          Update {food_name} Info
+        </h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
@@ -115,7 +125,9 @@ const UpdateCard = () => {
               {...register("price", { required: true })}
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
-            {errors.price && <span className="text-red-600">Give a Update value</span>}
+            {errors.price && (
+              <span className="text-red-600">Give a Update value</span>
+            )}
           </div>
           <div className="mt-4 md:mt-0">
             <p className="font-bold opacity-70">Food Origin :</p>
@@ -151,7 +163,7 @@ const UpdateCard = () => {
         />
       </form>
     </div>
-    );
+  );
 };
 
 export default UpdateCard;

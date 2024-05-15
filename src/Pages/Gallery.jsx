@@ -6,13 +6,13 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Spinner from "../Components/Spinner";
-import galleryphoto from "../assets/images/gallery.png"
+import galleryphoto from "../assets/images/gallery.png";
 
 const Gallery = () => {
   const { user } = useAuth();
-  const {displayName}=user || {}
-  const [galleryData, setGalleryData]=useState([])
-  const [loading , setloading]=useState(true)
+  const { displayName } = user || {};
+  const [galleryData, setGalleryData] = useState([]);
+  const [loading, setloading] = useState(true);
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ const Gallery = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const finalData = {...data, displayName}
+    const finalData = { ...data, displayName };
     fetch("https://assignment11-chi.vercel.app/gallery", {
       method: "POST",
       headers: {
@@ -28,7 +28,7 @@ const Gallery = () => {
       },
       body: JSON.stringify(finalData),
     })
-    .then((res) => res.json())
+      .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
           reset();
@@ -37,62 +37,78 @@ const Gallery = () => {
             icon: "success",
             title: "Successfuly added",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
         }
       });
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://assignment11-chi.vercel.app/gallery")
-    .then(res=>res.json())
-    .then(data=>{
-        setGalleryData(data)
-        setloading(false)
-    })
-  },[])
-if (loading) {
-  return <Spinner></Spinner>
-}
+      .then((res) => res.json())
+      .then((data) => {
+        setGalleryData(data);
+        setloading(false);
+      });
+  }, []);
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
   return (
-    <div  className=' md:mb-36 mb-8'>
-       <Helmet>
+    <div className=" md:mb-36 mb-8">
+      <Helmet>
         <title>Flavor Junction | Gallery</title>
       </Helmet>
-        <div style={{
-              backgroundImage:
-              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${galleryphoto})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }} className="text-center py-16 md:my-16">
+      <div
+        style={{
+          backgroundImage: `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${galleryphoto})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+        className="text-center py-16 md:my-16"
+      >
         <div>
-        <h1 className="font-extrabold text-4xl font-play text-white">Gallery</h1>
-        <div className="flex justify-center text-white">
-           <div className="text-sm breadcrumbs">
-            <ul>
-              <li><a>Home</a></li> 
-              <li><a>Gallery</a></li> 
-            </ul>
-           </div>
-        </div>
+          <h1 className="font-extrabold text-4xl font-play text-white">
+            Gallery
+          </h1>
+          <div className="flex justify-center text-white">
+            <div className="text-sm breadcrumbs">
+              <ul>
+                <li>
+                  <a>Home</a>
+                </li>
+                <li>
+                  <a>Gallery</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div className="container mx-auto p-4">
-        
         {/* The button to open modal */}
         <div className="flex justify-end  my-6">
           <div>
-          <div>
-          {
-            user?(<label htmlFor="my_modal_6" className="btn animate-bounce bg-blue-600 hover:bg-blue-800 text-white">
-            Add
-          </label>):(<Link to="/login"><label htmlFor="" className="btn bg-[#999] hover:bg-[#999] text-white">
-              Add
-            </label></Link>)
-          
-          }
-          </div>
+            <div>
+              {user ? (
+                <label
+                  htmlFor="my_modal_6"
+                  className="btn animate-bounce bg-blue-600 hover:bg-blue-800 text-white"
+                >
+                  Add
+                </label>
+              ) : (
+                <Link to="/login">
+                  <label
+                    htmlFor=""
+                    className="btn bg-[#999] hover:bg-[#999] text-white"
+                  >
+                    Add
+                  </label>
+                </Link>
+              )}
+            </div>
 
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
@@ -149,16 +165,14 @@ if (loading) {
             </div>
           </div>
         </div>
-        
-
 
         {/* stucture */}
 
         <div className="grid lg:grid-cols-3 gap-6">
-        {
-            galleryData.map(data=><GalleryCard key={data._id} data={data}></GalleryCard>)
-        }
-    </div> 
+          {galleryData.map((data) => (
+            <GalleryCard key={data._id} data={data}></GalleryCard>
+          ))}
+        </div>
       </div>
     </div>
   );

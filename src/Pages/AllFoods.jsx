@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 import AllFoodCard from "../Components/AllFoodCard";
 import { Helmet } from "react-helmet";
 import Spinner from "../Components/Spinner";
-import allfoodsphoto from "../assets/images/allfoods.png"
+import allfoodsphoto from "../assets/images/allfoods.png";
 
 const AllFoods = () => {
   const [allFoodCards, setAllFoodCards] = useState([]);
   const cardPerPage = 6;
   const [dataCount, setDataCount] = useState(1);
-  const [filter ,setFilter]=useState("")
-  const [sort ,setSort]=useState("")
-  const [search, setSearch]= useState('')
-  const [serchText , setSearchText] = useState("")
+  const [filter, setFilter] = useState("");
+  const [sort, setSort] = useState("");
+  const [search, setSearch] = useState("");
+  const [serchText, setSearchText] = useState("");
   const totalPage = Math.ceil(dataCount / cardPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const pages = [...Array(totalPage).keys()].map((i) => i + 1);
 
-  const [loading, setloading]= useState(true)
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     fetch(
@@ -25,23 +25,25 @@ const AllFoods = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllFoodCards(data);
-        setloading(false)
+        setloading(false);
       });
-  }, [currentPage, cardPerPage, filter , sort, search]);
+  }, [currentPage, cardPerPage, filter, sort, search]);
 
   useEffect(() => {
-    fetch(`https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`)
+    fetch(
+      `https://assignment11-chi.vercel.app/allFoodsCont?filter=${filter}&search=${search}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setDataCount(data.count);
-        setloading(false)
+        setloading(false);
       });
   }, [filter, search]);
 
-  const handleSearch = e =>{
-    e.preventDefault ()
-    setSearch(serchText)
-  }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(serchText);
+  };
 
   const handleCurrentPage = (val) => {
     setCurrentPage(val);
@@ -58,14 +60,14 @@ const AllFoods = () => {
     }
   };
 
-  const handleReset=()=>{
-    setFilter("")
-    setSort("")
-    setSearchText("")
-  }
+  const handleReset = () => {
+    setFilter("");
+    setSort("");
+    setSearchText("");
+  };
 
   if (loading) {
-    return <Spinner></Spinner>
+    return <Spinner></Spinner>;
   }
   return (
     <div>
@@ -73,23 +75,31 @@ const AllFoods = () => {
       <Helmet>
         <title>Flavor Junction | ALL Foods</title>
       </Helmet>
-      <div style={{
-              backgroundImage:
-              `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${allfoodsphoto})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }} className=" py-16 text-center md:my-16">
+      <div
+        style={{
+          backgroundImage: `linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${allfoodsphoto})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+        className=" py-16 text-center md:my-16"
+      >
         <div>
-        <h1 className="font-extrabold font-play text-4xl text-white">All Foods</h1>
-        <div className="flex justify-center text-white">
-           <div className="text-sm breadcrumbs">
-            <ul>
-              <li><a>Home</a></li> 
-              <li><a>All Foods</a></li> 
-            </ul>
-           </div>
-        </div>
+          <h1 className="font-extrabold font-play text-4xl text-white">
+            All Foods
+          </h1>
+          <div className="flex justify-center text-white">
+            <div className="text-sm breadcrumbs">
+              <ul>
+                <li>
+                  <a>Home</a>
+                </li>
+                <li>
+                  <a>All Foods</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       {/* scetion body  */}
@@ -98,8 +108,8 @@ const AllFoods = () => {
           <div className="flex flex-col md:flex-row justify-center items-center md:gap-5 gap-2">
             <div>
               <select
-              onChange={(e)=>setFilter(e.target.value)}
-              value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                value={filter}
                 name="category"
                 id="category"
                 className="border p-4 rounded-lg"
@@ -120,8 +130,10 @@ const AllFoods = () => {
             <form onSubmit={handleSearch}>
               <div className="flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
                 <input
-                onChange={e=>{setSearchText(e.target.value)}}
-                value={serchText}
+                  onChange={(e) => {
+                    setSearchText(e.target.value);
+                  }}
+                  value={serchText}
                   className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
                   type="text"
                   name="search"
@@ -136,8 +148,10 @@ const AllFoods = () => {
             </form>
             <div>
               <select
-              onChange={e=>{setSort(e.target.value)}}
-              value={sort}
+                onChange={(e) => {
+                  setSort(e.target.value);
+                }}
+                value={sort}
                 name="category"
                 id="category"
                 className="border p-4 rounded-md"
@@ -147,10 +161,14 @@ const AllFoods = () => {
                 <option value="low">Low to High</option>
               </select>
             </div>
-            <button onClick={handleReset} className="btn bg-green-300 hover:bg-green-600">Reset</button>
+            <button
+              onClick={handleReset}
+              className="btn bg-green-300 hover:bg-green-600"
+            >
+              Reset
+            </button>
           </div>
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          </div>
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
         </div>
 
         {/* <div className="flex justify-center">
