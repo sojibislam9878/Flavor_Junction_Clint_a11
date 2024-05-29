@@ -9,12 +9,12 @@ const TopFoodsSection = () => {
     fetch("https://assignment11-chi.vercel.app/allfoods")
       .then((res) => res.json())
       .then((data) => {
-        const sixFoods = data.slice(0, 6);
-
-        const sortFoods = sixFoods.sort(
+        
+        const sortFoods = data.sort(
           (a, b) => b.purchase_count - a.purchase_count
         );
-        setFoods(sortFoods);
+        const topFoods = sortFoods.slice(0, 6);
+        setFoods(topFoods);
       });
   }, []);
 

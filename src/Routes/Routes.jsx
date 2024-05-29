@@ -14,6 +14,7 @@ import UpdateCard from "../Components/UpdateCard";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import MyOrderedFoodItems from "../Pages/MyOrderedFoodItems";
 import Spinner from "../Components/Spinner";
+import UpdateProfile from "../Pages/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +71,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <MyAddedFoods></MyAddedFoods>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/updateprofile",
+        element: (
+          <PrivetRoute>
+            <UpdateProfile></UpdateProfile>
           </PrivetRoute>
         ),
       },

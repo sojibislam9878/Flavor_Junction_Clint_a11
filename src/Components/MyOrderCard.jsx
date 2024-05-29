@@ -10,7 +10,7 @@ const MyOrderCard = ({ card, reload, setReload }) => {
     date,
     quantitys,
     photo_url,
-    made_by,
+    displayName,
     _id,
   } = card || {};
 
@@ -74,7 +74,7 @@ const MyOrderCard = ({ card, reload, setReload }) => {
             </p>
             <p className="text-lg opacity-70 ">
               <span className="font-medium">Made by :</span>{" "}
-              <span className="opacity-60">{made_by || "unknown"}</span>
+              <span className="opacity-60">{displayName || "unknown"}</span>
             </p>
           </div>
           <div className="">

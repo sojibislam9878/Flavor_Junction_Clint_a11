@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 const FoodPurchase = () => {
   const { user } = useAuth();
-  const { displayName } = user || {};
+  // const { displayName } = user || {};
 
   const { id } = useParams();
   const [singleFood, setSingleFood] = useState({});
@@ -20,7 +20,7 @@ const FoodPurchase = () => {
       });
   }, [id, reload]);
 
-  const { _id, food_name, price, quantity, photo_url, made_by, email } =
+  const { _id, food_name, price, quantity, photo_url, displayName, email } =
     singleFood || {};
 
   if (quantity == 0) {
@@ -49,11 +49,12 @@ const FoodPurchase = () => {
     const purchaseFoodData = {
       ...purchaseFood,
       buyerEmail: user?.email,
-      buyerName: displayName,
+      buyerName: user?.displayName,
       photo_url,
-      made_by,
+      displayName,
       date,
     };
+    console.log(purchaseFoodData);
     if (quantitys > quantity) {
       return Swal.fire({
         icon: "error",
